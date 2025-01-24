@@ -278,7 +278,7 @@ export default function FullWidthTabs() {
             />
             <Tab
               icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Certificates"
+              label="Achievement"
               {...a11yProps(1)}
             />
             <Tab
