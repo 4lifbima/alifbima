@@ -64,7 +64,7 @@ useSeoMeta({
   ogTitle: 'All Projects | Alif Bima Pradana',
   ogDescription: 'Kumpulan project dan case study yang telah saya kerjakan sebagai Fullstack Developer.',
   ogImage: '/og-image.jpg',
-  ogUrl: 'https://alifbimapradana.com/portfolio',
+  ogUrl: 'https://www.alifbima.my.id/portfolio',
   ogLocale: 'id_ID',
   ogSiteName: 'Alif Bima Pradana',
   

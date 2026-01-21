@@ -218,7 +218,7 @@ if (artikel) {
     ogTitle: artikel.title,
     ogDescription: artikel.excerpt,
     ogImage: artikel.image,
-    ogUrl: `https://alifbimapradana.com/artikel/${artikel.slug}`,
+    ogUrl: `https://www.alifbima.my.id/artikel/${artikel.slug}`,
     ogLocale: 'id_ID',
     ogSiteName: 'Alif Bima Pradana',
     

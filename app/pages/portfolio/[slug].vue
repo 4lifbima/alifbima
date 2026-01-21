@@ -259,7 +259,7 @@ if (portfolio) {
     ogTitle: `${portfolio.title}`,
     ogDescription: portfolio.description,
     ogImage: portfolio.image,
-    ogUrl: `https://alifbimapradana.com/portfolio/${portfolio.slug}`,
+    ogUrl: `https://www.alifbima.my.id/portfolio/${portfolio.slug}`,
     ogLocale: 'id_ID',
     ogSiteName: 'Alif Bima Pradana',
     

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'id'
       },
-      title: 'Alif Bima Pradana | Fullstack Developer',
+      title: 'Alif Bima Pradana',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Alif Bima Pradana' },
-        { property: 'og:title', content: 'Alif Bima Pradana | Fullstack Developer' },
+        { property: 'og:title', content: 'Alif Bima Pradana' },
         { property: 'og:description', content: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
         { property: 'og:image', content: '/og-image.jpg' },
         { property: 'og:image:width', content: '1200' },
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Alif Bima Pradana | Fullstack Developer' },
+        { name: 'twitter:title', content: 'Alif Bima Pradana' },
         { name: 'twitter:description', content: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
         { name: 'twitter:image', content: '/og-image.jpg' },
         { name: 'twitter:creator', content: '@alifbima_' }
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap' },
-        { rel: 'canonical', href: 'https://alifbimapradana.com' }
+        { rel: 'canonical', href: 'https://www.alifbima.my.id' }
       ]
     }
   },

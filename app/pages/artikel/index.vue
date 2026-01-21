@@ -62,7 +62,7 @@ useSeoMeta({
   ogTitle: 'All Insights | Alif Bima Pradana',
   ogDescription: 'Kumpulan artikel dan insights tentang development, design, dan teknologi.',
   ogImage: '/og-image.jpg',
-  ogUrl: 'https://alifbimapradana.com/artikel',
+  ogUrl: 'https://www.alifbima.my.id/artikel',
   ogLocale: 'id_ID',
   ogSiteName: 'Alif Bima Pradana',
   

@@ -22,7 +22,7 @@ useSeoMeta({
   ogTitle: 'Alif Bima Pradana',
   ogDescription: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
   ogImage: '/og-image.jpg',
-  ogUrl: 'https://alifbimapradana.com',
+  ogUrl: 'https://www.alifbima.my.id',
   ogLocale: 'id_ID',
   ogSiteName: 'Alif Bima Pradana',
   
