@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Alif Bima Pradana' },
         { name: 'keywords', content: 'Fullstack Developer, Web Developer, Frontend, Backend, React, Vue, Laravel, Nuxt.js, Next.js, Portfolio' },
         { name: 'robots', content: 'index, follow' },
+        { name: 'google-site-verification', content: '7Crp0mhx89e215XuL8F-xoiMKxiHRbQd62oa4jpdR40' },
         { name: 'theme-color', content: '#4f46e5' },
 
         // Open Graph / Facebook
