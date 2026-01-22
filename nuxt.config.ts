@@ -1,8 +1,43 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { portfolios } from './app/data/Portofolio'
+import { artikels } from './app/data/Artikel'
+
+// Generate dynamic URLs for sitemap
+const dynamicUrls = [
+  '/',
+  '/portfolio',
+  '/artikel',
+  ...portfolios.map(p => `/portfolio/${p.slug}`),
+  ...artikels.map(a => `/artikel/${a.slug}`)
+]
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
+
+  // Modules
+  modules: ['@nuxtjs/sitemap'],
+
+  // Site URL for sitemap
+  site: {
+    url: 'https://www.alifbima.my.id'
+  },
+
+  // Sitemap configuration
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls'
+    ]
+  },
+
+  // Nitro configuration for dynamic sitemap
+  nitro: {
+    prerender: {
+      routes: dynamicUrls
+    }
+  },
+
   app: {
     head: {
       htmlAttrs: {
