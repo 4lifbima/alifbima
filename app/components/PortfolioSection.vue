@@ -67,5 +67,5 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-vue-next'
 import { getFeaturedPortfolios } from '~/data/Portofolio'
 
-const featuredPortfolios = getFeaturedPortfolios()
+const featuredPortfolios = getFeaturedPortfolios().slice(0, 3)
 </script>
