@@ -14,25 +14,61 @@
         <p class="text-white/80 mb-10 max-w-lg mx-auto text-lg">Punya proyek menarik? Butuh konsultasi desain?
           Atau sekedar ingin menyapa? Kirim pesan sekarang.</p>
 
-        <form class="max-w-md mx-auto space-y-4 text-left">
+        <!-- Success Message -->
+        <Transition name="fade">
+          <div v-if="formState === 'success'" class="mb-8 p-4 rounded-xl bg-green-500/20 border border-green-400/50 backdrop-blur-sm">
+            <div class="flex items-center justify-center gap-3 text-white">
+              <CheckCircle class="w-6 h-6 text-green-400" />
+              <span class="font-medium">{{ successMessage }}</span>
+            </div>
+          </div>
+        </Transition>
+
+        <!-- Error Message -->
+        <Transition name="fade">
+          <div v-if="formState === 'error'" class="mb-8 p-4 rounded-xl bg-red-500/20 border border-red-400/50 backdrop-blur-sm">
+            <div class="flex items-center justify-center gap-3 text-white">
+              <AlertCircle class="w-6 h-6 text-red-400" />
+              <span class="font-medium">{{ errorMessage }}</span>
+            </div>
+          </div>
+        </Transition>
+
+        <form @submit.prevent="handleSubmit" class="max-w-md mx-auto space-y-4 text-left">
           <div>
             <label class="sr-only">Name</label>
-            <input type="text" placeholder="Your Name"
-              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm">
+            <input 
+              v-model="form.name"
+              type="text" 
+              placeholder="Your Name"
+              :disabled="formState === 'loading'"
+              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed">
           </div>
           <div>
             <label class="sr-only">Email</label>
-            <input type="email" placeholder="Your Email Address"
-              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm">
+            <input 
+              v-model="form.email"
+              type="email" 
+              placeholder="Your Email Address"
+              :disabled="formState === 'loading'"
+              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed">
           </div>
           <div>
             <label class="sr-only">Message</label>
-            <textarea rows="4" placeholder="Tell me about your project..."
-              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm"></textarea>
+            <textarea 
+              v-model="form.message"
+              rows="4" 
+              placeholder="Tell me about your project..."
+              :disabled="formState === 'loading'"
+              class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"></textarea>
           </div>
-          <button type="button"
-            class="w-full py-4 rounded-xl bg-white text-primary font-bold hover:bg-slate-100 hover:shadow-lg hover:shadow-white/20 transition-all transform hover:-translate-y-1">
-            Send Message
+          <button 
+            type="submit"
+            :disabled="formState === 'loading'"
+            class="w-full py-4 rounded-xl bg-white text-primary font-bold hover:bg-slate-100 hover:shadow-lg hover:shadow-white/20 transition-all transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none flex items-center justify-center gap-2">
+            <Loader2 v-if="formState === 'loading'" class="w-5 h-5 animate-spin" />
+            <Send v-else class="w-5 h-5" />
+            <span>{{ formState === 'loading' ? 'Mengirim...' : 'Send Message' }}</span>
           </button>
         </form>
 
@@ -64,5 +100,67 @@
 </template>
 
 <script setup lang="ts">
-import { Linkedin, Instagram, Facebook, Github } from 'lucide-vue-next'
+import { Linkedin, Instagram, Facebook, Github, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-vue-next'
+
+// Form state
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
+type FormState = 'idle' | 'loading' | 'success' | 'error'
+const formState = ref<FormState>('idle')
+const successMessage = ref('')
+const errorMessage = ref('')
+
+// Handle form submission
+const handleSubmit = async () => {
+  // Validate form
+  if (!form.value.name.trim() || !form.value.email.trim() || !form.value.message.trim()) {
+    formState.value = 'error'
+    errorMessage.value = 'Mohon isi semua field yang diperlukan.'
+    setTimeout(() => formState.value = 'idle', 5000)
+    return
+  }
+
+  formState.value = 'loading'
+
+  try {
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
+        name: form.value.name.trim(),
+        email: form.value.email.trim(),
+        message: form.value.message.trim()
+      }
+    })
+
+    formState.value = 'success'
+    successMessage.value = response.message || 'Pesan berhasil dikirim!'
+    
+    // Reset form
+    form.value = { name: '', email: '', message: '' }
+    
+    // Reset state after 5 seconds
+    setTimeout(() => formState.value = 'idle', 5000)
+  } catch (error: any) {
+    formState.value = 'error'
+    errorMessage.value = error.data?.statusMessage || 'Gagal mengirim pesan. Silakan coba lagi.'
+    setTimeout(() => formState.value = 'idle', 5000)
+  }
+}
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
