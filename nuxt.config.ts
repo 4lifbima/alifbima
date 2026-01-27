@@ -78,8 +78,8 @@ export default defineNuxtConfig({
         { name: 'twitter:creator', content: '@alifbima_' }
       ],
       link: [
-        { rel: 'icon', type: 'image/jpeg', href: 'https://www.alifbima.my.id/og-image.jpg' },
-        { rel: 'apple-touch-icon', href: 'https://www.alifbima.my.id/og-image.jpg' },
+        { rel: 'icon', type: 'image/jpeg', href: '/og-image.jpg' },
+        { rel: 'apple-touch-icon', href: '/og-image.jpg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap' },
