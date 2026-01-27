@@ -16,6 +16,12 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
 
+  // Runtime Config for environment variables
+  runtimeConfig: {
+    // Server-side only (not exposed to client)
+    resendApiKey: process.env.RESEND_API_KEY,
+  },
+
   // Modules
   modules: ['@nuxtjs/sitemap'],
 

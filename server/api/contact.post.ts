@@ -1,8 +1,10 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export default defineEventHandler(async (event) => {
+    // Get API key from runtime config (works in Vercel production)
+    const config = useRuntimeConfig()
+    const resend = new Resend(config.resendApiKey)
+
     const body = await readBody(event)
 
     const { name, email, message } = body
