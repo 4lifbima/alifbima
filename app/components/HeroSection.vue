@@ -32,7 +32,7 @@
             class="px-8 py-4 rounded-full bg-primary hover:bg-primary-light text-white font-semibold transition-all shadow-lg shadow-primary/25 hover:shadow-primary/50 hover:-translate-y-1 flex items-center justify-center gap-2">
             View Projects <ArrowRight class="w-4 h-4" />
           </a>
-          <a href="#contact"
+          <a href="/CV_ALIF.pdf"
             class="px-8 py-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
             <Download class="w-4 h-4" /> Download CV
           </a>
