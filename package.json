@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/sitemap": "^7.5.2",
     "lucide-vue-next": "^0.556.0",
     "nuxt": "^4.2.1",
     "resend": "^6.9.0",
