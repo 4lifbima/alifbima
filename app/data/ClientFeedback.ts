@@ -1,67 +1,73 @@
-export interface ClientFeedback {
-  id: string
-  name: string
-  role: string
-  company: string
-  image: string
-  feedback: string
-  rating: number
+export interface ContributionMonth {
+  label: string
+  week: number
 }
 
-export const clientFeedbacks: ClientFeedback[] = [
-  {
-    id: '1',
-    name: 'Sarah Jenkins',
-    role: 'CEO',
-    company: 'StartUp Inc',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Alex is a rare breed of designer who understands code perfectly. The delivery was flawless and on time.',
-    rating: 5
-  },
-  {
-    id: '2',
-    name: 'Budi Santoso',
-    role: 'Product Manager',
-    company: 'Tech Solutions',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Design sangat modern dan elegan. Komunikasi sangat lancar, revisi ditangani dengan cepat. Highly recommended!',
-    rating: 5
-  },
-  {
-    id: '3',
-    name: 'Mark Dave',
-    role: 'Founder',
-    company: 'TechLab',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Transformed our outdated website into a modern masterpiece. The dark mode implementation is stunning.',
-    rating: 5
-  },
-  {
-    id: '4',
-    name: 'Lisa Chen',
-    role: 'CTO',
-    company: 'InnovateCo',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Outstanding work! The attention to detail and user experience is exceptional. Our users love the new design.',
-    rating: 5
-  },
-  {
-    id: '5',
-    name: 'John Anderson',
-    role: 'Marketing Director',
-    company: 'BrandWorks',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Professional, creative, and reliable. The project was delivered on time and exceeded our expectations.',
-    rating: 5
-  },
-  {
-    id: '6',
-    name: 'Maria Garcia',
-    role: 'Design Lead',
-    company: 'Creative Studio',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
-    feedback: 'Working with this team was a pleasure. They understood our vision and brought it to life beautifully.',
-    rating: 5
-  }
+export interface ContributionWeek {
+  days: number[]
+}
+
+export interface GitHubContributions {
+  username: string
+  total: number
+  periodLabel: string
+  months: ContributionMonth[]
+  weekdays: string[]
+  weeks: ContributionWeek[]
+}
+
+const monthByWeek = [
+  2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
+  8, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 0, 0, 0, 0, 1,
+  1, 1, 1, 1, 1, 1, 1
 ]
 
+const monthIntensity = [3.2, 3.4, 0.8, 1.1, 1.2, 1.3, 1.1, 1.5, 2.2, 2.8, 2.7, 2.9]
+
+const pseudoRandom = (week: number, day: number) => {
+  const x = Math.sin(week * 12.9898 + day * 78.233) * 43758.5453
+  return x - Math.floor(x)
+}
+
+const makeContributionWeeks = (): ContributionWeek[] => {
+  return monthByWeek.map((monthIndex, weekIndex) => {
+    const days = Array.from({ length: 7 }, (_, dayIndex) => {
+      const base = monthIntensity[monthIndex]
+      const signal = base + pseudoRandom(weekIndex, dayIndex) * 2.2
+
+      if (signal < 1.1) return 0
+      if (signal < 1.9) return 1
+      if (signal < 2.6) return 2
+      if (signal < 3.4) return 3
+      return 4
+    })
+
+    return { days }
+  })
+}
+
+export const fallbackGitHubContributions: GitHubContributions = {
+  username: '4lifbima',
+  total: 587,
+  periodLabel: 'in the last year',
+  months: [
+    { label: 'Mar', week: 0 },
+    { label: 'Apr', week: 4 },
+    { label: 'May', week: 8 },
+    { label: 'Jun', week: 12 },
+    { label: 'Jul', week: 16 },
+    { label: 'Aug', week: 20 },
+    { label: 'Sep', week: 25 },
+    { label: 'Oct', week: 29 },
+    { label: 'Nov', week: 33 },
+    { label: 'Dec', week: 37 },
+    { label: 'Jan', week: 41 },
+    { label: 'Feb', week: 46 }
+  ],
+  weekdays: ['Mon', 'Wed', 'Fri'],
+  weeks: makeContributionWeeks()
+}
+
+// Compatibility export to avoid breaking older imports.
+export interface ClientFeedback {}
+export const clientFeedbacks: ClientFeedback[] = []

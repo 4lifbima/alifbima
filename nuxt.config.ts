@@ -20,6 +20,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Server-side only (not exposed to client)
     resendApiKey: process.env.RESEND_API_KEY,
+    githubToken: process.env.GITHUB_TOKEN,
+    public: {
+      githubUsername: process.env.GITHUB_USERNAME || 'your-github-username'
+    }
   },
 
   // Nitro configuration for dynamic prerender routes
