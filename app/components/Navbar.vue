@@ -25,10 +25,12 @@
             class="text-sm font-medium hover:text-primary dark:hover:text-accent-teal transition-colors text-slate-800 dark:text-slate-200">Work</a>
           <a href="#experience"
             class="text-sm font-medium hover:text-primary dark:hover:text-accent-teal transition-colors text-slate-800 dark:text-slate-200">Experience</a>
-          <a href="#contact"
-            class="px-5 py-2.5 rounded-full bg-primary hover:bg-primary-light text-white text-sm font-semibold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40">
-            Let's Talk
-          </a>
+          <NuxtLink to="/dashboard"
+            class="px-5 py-2.5 rounded-full bg-primary hover:bg-primary-light text-white text-sm font-semibold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 flex items-center gap-2"
+            active-class="bg-primary-dark shadow-primary/60">
+              <ChartColumnBig class="w-4 h-4" />
+            Dashboard
+          </NuxtLink>
 
           <!-- Dark Mode Toggle -->
           <button @click="toggleDarkMode"
@@ -69,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { Sun, Moon, Menu } from 'lucide-vue-next'
+import { Sun, Moon, Menu, ChartColumnBig } from 'lucide-vue-next'
 
 const { isDarkMode, toggleDarkMode } = useDarkMode()
 

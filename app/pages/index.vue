@@ -5,7 +5,6 @@
     <SkillsSection />
     <PortfolioSection />
     <ExperienceSection />
-    <TestimonialsSection />
     <InsightsSection />
     <ContactSection />
     <Footer />

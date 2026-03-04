@@ -7,6 +7,7 @@ const dynamicUrls = [
   '/',
   '/portfolio',
   '/artikel',
+  '/dashboard',
   ...portfolios.map(p => `/portfolio/${p.slug}`),
   ...artikels.map(a => `/artikel/${a.slug}`)
 ]

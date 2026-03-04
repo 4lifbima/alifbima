@@ -36,12 +36,16 @@
         class="text-2xl font-semibold text-primary dark:text-accent-teal mobile-link flex items-center gap-4 hover:text-primary-dark transition-colors">
         <Mail class="w-6 h-6" /> Contact
       </a>
+      <NuxtLink to="/dashboard" @click="closeMenu"
+        class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
+        <ChartColumnBig class="w-6 h-6" /> Dashboard
+      </NuxtLink>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-import { X, User, Code2, Briefcase, Clock, Mail } from 'lucide-vue-next'
+import { X, User, Code2, Briefcase, Clock, Mail, ChartColumnBig } from 'lucide-vue-next'
 
 const props = defineProps<{
   isOpen: boolean
