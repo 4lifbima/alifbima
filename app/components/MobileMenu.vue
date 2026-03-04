@@ -18,19 +18,19 @@
       </button>
       <a href="#about" @click="closeMenu"
         class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
-        <User class="w-6 h-6" /> About Me
+        <User class="w-6 h-6" /> {{ $t('nav.about') }}
       </a>
       <a href="#skills" @click="closeMenu"
         class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
-        <Code2 class="w-6 h-6" /> Skills
+        <Code2 class="w-6 h-6" /> {{ $t('nav.skills') }}
       </a>
       <a href="#portfolio" @click="closeMenu"
         class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
-        <Briefcase class="w-6 h-6" /> Portfolio
+        <Briefcase class="w-6 h-6" /> {{ $t('nav.work') }}
       </a>
       <a href="#experience" @click="closeMenu"
         class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
-        <Clock class="w-6 h-6" /> Experience
+        <Clock class="w-6 h-6" /> {{ $t('nav.experience') }}
       </a>
       <a href="#contact" @click="closeMenu"
         class="text-2xl font-semibold text-primary dark:text-accent-teal mobile-link flex items-center gap-4 hover:text-primary-dark transition-colors">
@@ -38,7 +38,7 @@
       </a>
       <NuxtLink to="/dashboard" @click="closeMenu"
         class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mobile-link flex items-center gap-4 hover:text-primary dark:hover:text-accent-teal transition-colors">
-        <ChartColumnBig class="w-6 h-6" /> Dashboard
+        <ChartColumnBig class="w-6 h-6" /> {{ $t('nav.dashboard') }}
       </NuxtLink>
     </div>
   </Transition>
@@ -47,31 +47,17 @@
 <script setup lang="ts">
 import { X, User, Code2, Briefcase, Clock, Mail, ChartColumnBig } from 'lucide-vue-next'
 
-const props = defineProps<{
-  isOpen: boolean
-}>()
-
-const emit = defineEmits<{
-  close: []
-}>()
-
-const closeMenu = () => {
-  emit('close')
-}
+const props = defineProps<{ isOpen: boolean }>()
+const emit = defineEmits<{ close: [] }>()
+const closeMenu = () => emit('close')
 
 watch(() => props.isOpen, (newVal) => {
   if (import.meta.client) {
-    if (newVal) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = newVal ? 'hidden' : ''
   }
 }, { immediate: true })
 
 onUnmounted(() => {
-  if (import.meta.client) {
-    document.body.style.overflow = ''
-  }
+  if (import.meta.client) document.body.style.overflow = ''
 })
 </script>

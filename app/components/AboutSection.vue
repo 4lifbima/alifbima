@@ -19,35 +19,26 @@
 
         <!-- Content -->
         <div class="md:col-span-7 reveal delay-100">
-          <h2 class="text-primary dark:text-accent-teal font-bold tracking-wider uppercase text-sm mb-3">About
-            Me</h2>
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 break-words">Bridging the gap
-            <br class="hidden sm:block"> design & engineering.</h3>
+          <h2 class="text-primary dark:text-accent-teal font-bold tracking-wider uppercase text-sm mb-3">{{ $t('about.label') }}</h2>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 break-words">{{ $t('about.heading') }}</h3>
           <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
-            <p>
-              Halo! Saya Alif Bima Pradana, seorang profesional yang berdedikasi dalam menciptakan solusi
-              digital yang berdampak. Dengan latar belakang kuat di Computer Science dan passion mendalam
-              pada User Interface, saya membantu brand menerjemahkan visi mereka menjadi realitas digital.
-            </p>
-            <p>
-              Filosofi kerja saya sederhana: kualitas kode sama pentingnya dengan estetika visual. Saya
-              memastikan setiap pixel presisi dan setiap baris kode efisien.
-            </p>
+            <p>{{ $t('about.p1') }}</p>
+            <p>{{ $t('about.p2') }}</p>
           </div>
 
           <div class="grid grid-cols-2 gap-6 mt-8">
             <div class="flex items-start gap-3 border border-slate-200 dark:border-slate-700 p-4 rounded-xl">
               <Zap class="w-6 h-6 text-yellow-500 shrink-0 mt-1" />
               <div>
-                <h5 class="font-bold text-slate-900 dark:text-white">Fast Performance</h5>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Optimized code & assets.</p>
+                <h5 class="font-bold text-slate-900 dark:text-white">{{ $t('about.fastPerf') }}</h5>
+                <p class="text-sm text-slate-500 dark:text-slate-400">{{ $t('about.fastPerfDesc') }}</p>
               </div>
             </div>
             <div class="flex items-start gap-3 border border-slate-200 dark:border-slate-700 p-4 rounded-xl">
               <Layout class="w-6 h-6 text-primary shrink-0 mt-1" />
               <div>
-                <h5 class="font-bold text-slate-900 dark:text-white">Responsive</h5>
-                <p class="text-sm text-slate-500 dark:text-slate-400">Looks good on all screens.</p>
+                <h5 class="font-bold text-slate-900 dark:text-white">{{ $t('about.responsive') }}</h5>
+                <p class="text-sm text-slate-500 dark:text-slate-400">{{ $t('about.responsiveDesc') }}</p>
               </div>
             </div>
           </div>

@@ -10,9 +10,8 @@
           class="absolute bottom-0 left-0 w-24 h-24 md:w-48 md:h-48 bg-accent-teal/20 rounded-full translate-y-1/2 -translate-x-1/2 max-w-[50%]">
         </div>
 
-        <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-6 break-words px-2">Let's work together!</h2>
-        <p class="text-white/80 mb-10 max-w-lg mx-auto text-lg">Punya proyek menarik? Butuh konsultasi desain?
-          Atau sekedar ingin menyapa? Kirim pesan sekarang.</p>
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-6 break-words px-2">{{ $t('contact.heading') }}</h2>
+        <p class="text-white/80 mb-10 max-w-lg mx-auto text-lg">{{ $t('contact.desc') }}</p>
 
         <!-- Success Message -->
         <Transition name="fade">
@@ -40,7 +39,7 @@
             <input 
               v-model="form.name"
               type="text" 
-              placeholder="Your Name"
+              :placeholder="$t('contact.namePlaceholder')"
               :disabled="formState === 'loading'"
               class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed">
           </div>
@@ -49,7 +48,7 @@
             <input 
               v-model="form.email"
               type="email" 
-              placeholder="Your Email Address"
+              :placeholder="$t('contact.emailPlaceholder')"
               :disabled="formState === 'loading'"
               class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed">
           </div>
@@ -58,7 +57,7 @@
             <textarea 
               v-model="form.message"
               rows="4" 
-              placeholder="Tell me about your project..."
+              :placeholder="$t('contact.messagePlaceholder')"
               :disabled="formState === 'loading'"
               class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20 focus:border-white transition-all backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"></textarea>
           </div>
@@ -68,7 +67,7 @@
             class="w-full py-4 rounded-xl bg-white text-primary font-bold hover:bg-slate-100 hover:shadow-lg hover:shadow-white/20 transition-all transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none flex items-center justify-center gap-2">
             <Loader2 v-if="formState === 'loading'" class="w-5 h-5 animate-spin" />
             <Send v-else class="w-5 h-5" />
-            <span>{{ formState === 'loading' ? 'Mengirim...' : 'Send Message' }}</span>
+            <span>{{ formState === 'loading' ? $t('contact.sending') : $t('contact.send') }}</span>
           </button>
         </form>
 
@@ -102,24 +101,18 @@
 <script setup lang="ts">
 import { Linkedin, Instagram, Facebook, Github, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-vue-next'
 
-// Form state
-const form = ref({
-  name: '',
-  email: '',
-  message: ''
-})
+const { t } = useI18n()
 
+const form = ref({ name: '', email: '', message: '' })
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 const formState = ref<FormState>('idle')
 const successMessage = ref('')
 const errorMessage = ref('')
 
-// Handle form submission
 const handleSubmit = async () => {
-  // Validate form
   if (!form.value.name.trim() || !form.value.email.trim() || !form.value.message.trim()) {
     formState.value = 'error'
-    errorMessage.value = 'Mohon isi semua field yang diperlukan.'
+    errorMessage.value = t('contact.errorFill')
     setTimeout(() => formState.value = 'idle', 5000)
     return
   }
@@ -137,16 +130,12 @@ const handleSubmit = async () => {
     })
 
     formState.value = 'success'
-    successMessage.value = response.message || 'Pesan berhasil dikirim!'
-    
-    // Reset form
+    successMessage.value = (response as any).message || t('contact.successMsg')
     form.value = { name: '', email: '', message: '' }
-    
-    // Reset state after 5 seconds
     setTimeout(() => formState.value = 'idle', 5000)
   } catch (error: any) {
     formState.value = 'error'
-    errorMessage.value = error.data?.statusMessage || 'Gagal mengirim pesan. Silakan coba lagi.'
+    errorMessage.value = error.data?.statusMessage || t('contact.failMsg')
     setTimeout(() => formState.value = 'idle', 5000)
   }
 }
@@ -157,7 +146,6 @@ const handleSubmit = async () => {
 .fade-leave-active {
   transition: all 0.3s ease;
 }
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

@@ -1,0 +1,85 @@
+{
+    "nav": {
+        "about": "自己紹介",
+        "skills": "スキル",
+        "work": "作品",
+        "experience": "経歴",
+        "dashboard": "ダッシュボード"
+    },
+    "hero": {
+        "badge": "ようこそ、私のウェブサイトへ",
+        "intro": "私は",
+        "role": "フルスタック開発者",
+        "desc": "機能的・効率的なアプリ、情報システム、ウェブサイトの構築に注力しています。",
+        "viewProjects": "プロジェクトを見る",
+        "downloadCV": "履歴書をダウンロード",
+        "openToWork": "仕事募集中",
+        "fullstackDev": "フルスタック開発"
+    },
+    "about": {
+        "label": "自己紹介",
+        "heading": "デザインとエンジニアリングを繋ぐ。",
+        "p1": "こんにちは！私はAlif Bima Pradanaです。影響力のあるデジタルソリューションを生み出すことに専念するプロフェッショナルです。Computer Scienceの強固な知識と、ユーザーインターフェースへの深い情熱を持ち、ブランドのビジョンをデジタルの現実に変えます。",
+        "p2": "私の仕事哲学はシンプルです：コードの品質はビジュアルの美学と同じくらい重要です。すべてのピクセルが正確で、すべてのコードが効率的であることを確認します。",
+        "fastPerf": "高速パフォーマンス",
+        "fastPerfDesc": "最適化されたコードとアセット。",
+        "responsive": "レスポンシブ",
+        "responsiveDesc": "すべての画面で美しく表示。"
+    },
+    "skills": {
+        "label": "技術スタック",
+        "heading": "技術的な熟練度",
+        "desc": "フルスタック開発者としてクリエイティブなアイデアを機能的な製品に変えるために使用するツールキット。"
+    },
+    "experience": {
+        "heading": "職歴",
+        "kpmi": "KPMI BANGKEPのデジタル地域組織ウェブサイトを構築。",
+        "klikbanggai": "PT Klikbanggai Molaのオンラインニュースメディアウェブサイトを構築。",
+        "freelance": "クライアントと協力してウェブサイトを構築し、カスタムウェブソリューションを提供。",
+        "present": "現在"
+    },
+    "insights": {
+        "heading": "最新の記事",
+        "readBlog": "ブログを読む"
+    },
+    "contact": {
+        "heading": "一緒に働きましょう！",
+        "desc": "面白いプロジェクトがありますか？デザインの相談が必要ですか？または単に挨拶したいですか？今すぐメッセージを送ってください。",
+        "namePlaceholder": "お名前",
+        "emailPlaceholder": "メールアドレス",
+        "messagePlaceholder": "プロジェクトについて教えてください...",
+        "sending": "送信中...",
+        "send": "メッセージを送る",
+        "errorFill": "すべての必須項目を入力してください。",
+        "successMsg": "メッセージが正常に送信されました！",
+        "failMsg": "メッセージの送信に失敗しました。もう一度お試しください。"
+    },
+    "footer": {
+        "rights": "© 2026 全著作権所有。❤️ と Tailwind で作成。",
+        "privacy": "プライバシー",
+        "terms": "利用規約"
+    },
+    "dashboard": {
+        "badge": "GitHub 統計",
+        "heading": "開発者ダッシュボード",
+        "desc": "GitHubの最新コーディング統計とアクティビティ。",
+        "failedLoad": "データの読み込みに失敗しました",
+        "retry": "再試行",
+        "githubProfile": "GitHubプロフィール",
+        "website": "ウェブサイト",
+        "joinedAt": "参加日",
+        "publicRepos": "公開リポジトリ",
+        "totalStars": "合計スター",
+        "followers": "フォロワー",
+        "following": "フォロー中",
+        "topLanguages": "トップ言語",
+        "topRepos": "トップリポジトリ",
+        "streakActivity": "ストリーク＆アクティビティ",
+        "activityGraph": "アクティビティグラフ",
+        "profileSummary": "プロフィールサマリー",
+        "contributionHeatmap": "コントリビューション ヒートマップ",
+        "contributionsLastYear": "昨年のコントリビューション",
+        "less": "少ない",
+        "more": "多い"
+    }
+}

@@ -13,13 +13,13 @@
       <div class="text-center mb-12 reveal">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-accent-teal text-sm font-semibold mb-4">
           <Github class="w-4 h-4" />
-          GitHub Statistics
+          {{ $t('dashboard.badge') }}
         </div>
         <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-3">
-          My Dev Dashboard
+          {{ $t('dashboard.heading') }}
         </h1>
         <p class="text-slate-500 dark:text-slate-400 text-lg max-w-xl mx-auto">
-          Statistik & aktivitas coding terbaru dari GitHub saya.
+          {{ $t('dashboard.desc') }}
         </p>
       </div>
 
@@ -52,10 +52,10 @@
       <!-- Error State -->
       <div v-else-if="error" class="flex flex-col items-center justify-center py-24 text-center">
         <AlertCircle class="w-16 h-16 text-red-400 mb-4" />
-        <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">Gagal memuat data</h3>
+        <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">{{ $t('dashboard.failedLoad') }}</h3>
         <p class="text-slate-500 dark:text-slate-400 mb-6">{{ error }}</p>
         <button @click="fetchData" class="px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-light transition-colors">
-          Coba Lagi
+          {{ $t('dashboard.retry') }}
         </button>
       </div>
 
@@ -87,17 +87,17 @@
                   <Building2 class="w-4 h-4" /> {{ stats.profile.company }}
                 </span>
                 <span class="flex items-center gap-1">
-                  <CalendarDays class="w-4 h-4" /> Joined {{ formatDate(stats.profile.createdAt) }}
+                  <CalendarDays class="w-4 h-4" /> {{ $t('dashboard.joinedAt') }} {{ formatDate(stats.profile.createdAt) }}
                 </span>
               </div>
               <div class="flex flex-wrap justify-center sm:justify-start gap-3">
                 <a :href="stats.profile.profileUrl" target="_blank"
                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-sm font-medium hover:bg-primary transition-colors">
-                  <Github class="w-4 h-4" /> GitHub Profile
+                  <Github class="w-4 h-4" /> {{ $t('dashboard.githubProfile') }}
                 </a>
                 <a v-if="stats.profile.blog" :href="stats.profile.blog" target="_blank"
                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-accent-teal dark:hover:text-accent-teal transition-colors">
-                  <ExternalLink class="w-4 h-4" /> Website
+                  <ExternalLink class="w-4 h-4" /> {{ $t('dashboard.website') }}
                 </a>
               </div>
             </div>
@@ -123,7 +123,7 @@
         <div v-if="stats.languageStats.length" class="glass-card rounded-3xl p-6 sm:p-8 reveal">
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <Code2 class="w-5 h-5 text-primary dark:text-accent-teal" />
-            Top Languages
+            {{ $t('dashboard.topLanguages') }}
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div v-for="lang in stats.languageStats" :key="lang.language" class="space-y-1.5">
@@ -148,7 +148,7 @@
         <div v-if="stats.topRepos.length" class="reveal">
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
             <Star class="w-5 h-5 text-yellow-400" />
-            Top Repositories
+            {{ $t('dashboard.topRepos') }}
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -190,7 +190,7 @@
         <div class="glass-card rounded-3xl p-6 sm:p-8 reveal">
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <Flame class="w-5 h-5 text-orange-400" />
-            Streak & Activity
+            {{ $t('dashboard.streakActivity') }}
           </h3>
           <div class="flex justify-center">
             <img
@@ -206,7 +206,7 @@
         <div class="glass-card rounded-3xl p-6 sm:p-8 reveal">
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <Activity class="w-5 h-5 text-accent-teal" />
-            Activity Graph
+            {{ $t('dashboard.activityGraph') }}
           </h3>
           <div class="flex justify-center overflow-x-auto">
             <img
@@ -222,7 +222,7 @@
         <div class="reveal">
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <BarChart3 class="w-5 h-5 text-primary dark:text-accent-teal" />
-            Profile Summary
+            {{ $t('dashboard.profileSummary') }}
           </h3>
 
           <!-- 2×2 grid: Stats · Most Commit Language / Repos per Language · Productive Time -->
@@ -258,11 +258,11 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
             <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <CalendarDays class="w-5 h-5 text-primary dark:text-accent-teal" />
-              Contribution Heatmap
+              {{ $t('dashboard.contributionHeatmap') }}
             </h3>
             <span class="inline-flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <span class="font-semibold text-primary dark:text-accent-teal">{{ contributions.total }}</span>
-              contributions in the last year
+              {{ $t('dashboard.contributionsLastYear') }}
             </span>
           </div>
           <!-- Heatmap Grid -->
@@ -278,9 +278,9 @@
           </div>
           <!-- Legend -->
           <div class="flex items-center justify-end gap-2 mt-3 text-xs text-slate-400 dark:text-slate-500">
-            <span>Less</span>
+            <span>{{ $t('dashboard.less') }}</span>
             <div v-for="l in [0,1,2,3,4]" :key="l" :class="['w-3 h-3 rounded-sm', getCellClass(l)]" />
-            <span>More</span>
+            <span>{{ $t('dashboard.more') }}</span>
           </div>
         </div>
 
@@ -345,13 +345,14 @@ const fetchData = async () => {
 await fetchData()
 
 // ── Quick Stats ─────────────────────────────────────────
+const { t } = useI18n()
 const quickStats = computed(() => {
   if (!stats.value) return []
   return [
-    { label: 'Public Repos', value: stats.value.profile.publicRepos, icon: BookOpen, bgColor: 'bg-primary/10 dark:bg-primary/20', iconColor: 'text-primary dark:text-accent-teal' },
-    { label: 'Total Stars', value: stats.value.totalStars, icon: Star, bgColor: 'bg-yellow-50 dark:bg-yellow-400/10', iconColor: 'text-yellow-500' },
-    { label: 'Followers', value: stats.value.profile.followers, icon: Github, bgColor: 'bg-green-50 dark:bg-green-400/10', iconColor: 'text-green-500' },
-    { label: 'Following', value: stats.value.profile.following, icon: TrendingUp, bgColor: 'bg-blue-50 dark:bg-blue-400/10', iconColor: 'text-blue-500' },
+    { label: t('dashboard.publicRepos'), value: stats.value.profile.publicRepos, icon: BookOpen, bgColor: 'bg-primary/10 dark:bg-primary/20', iconColor: 'text-primary dark:text-accent-teal' },
+    { label: t('dashboard.totalStars'), value: stats.value.totalStars, icon: Star, bgColor: 'bg-yellow-50 dark:bg-yellow-400/10', iconColor: 'text-yellow-500' },
+    { label: t('dashboard.followers'), value: stats.value.profile.followers, icon: Github, bgColor: 'bg-green-50 dark:bg-green-400/10', iconColor: 'text-green-500' },
+    { label: t('dashboard.following'), value: stats.value.profile.following, icon: TrendingUp, bgColor: 'bg-blue-50 dark:bg-blue-400/10', iconColor: 'text-blue-500' },
   ]
 })
 

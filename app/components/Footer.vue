@@ -5,19 +5,18 @@
       <div class="flex items-center gap-2">
         <ClientOnly>
           <img v-if="!isDarkMode" 
-            class="w-24 h-8 rounded" src="/assets/img/bima.png" alt="Logo">
+            class="w-42 h-10 rounded" src="/icon/my-icon.png" alt="Logo">
           <img v-else 
-            class="w-24 h-8 rounded" src="/assets/img/dark.png" alt="Logo">
+            class="w-42 h-10 rounded" src="/icon/my-dark.png" alt="Logo">
           <template #fallback>
-            <img class="w-24 h-8 rounded" src="/assets/img/bima.png" alt="Logo">
+            <img class="w-42 h-10 rounded" src="/icon/my-icon.png" alt="Logo">
           </template>
         </ClientOnly>
       </div>
-      <p class="text-slate-500 dark:text-slate-400 text-sm">© 2026 All Rights Reserved. Made with ❤️ and Tailwind.
-      </p>
+      <p class="text-slate-500 dark:text-slate-400 text-sm">{{ $t('footer.rights') }}</p>
       <div class="flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
-        <a href="#" class="hover:text-primary dark:hover:text-accent-teal">Privacy</a>
-        <a href="#" class="hover:text-primary dark:hover:text-accent-teal">Terms</a>
+        <a href="#" class="hover:text-primary dark:hover:text-accent-teal">{{ $t('footer.privacy') }}</a>
+        <a href="#" class="hover:text-primary dark:hover:text-accent-teal">{{ $t('footer.terms') }}</a>
       </div>
     </div>
   </footer>

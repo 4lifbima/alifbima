@@ -1,0 +1,85 @@
+{
+    "nav": {
+        "about": "Tentang",
+        "skills": "Keahlian",
+        "work": "Karya",
+        "experience": "Pengalaman",
+        "dashboard": "Dashboard"
+    },
+    "hero": {
+        "badge": "Selamat datang di website saya",
+        "intro": "Saya seorang",
+        "role": "Fullstack Developer",
+        "desc": "yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.",
+        "viewProjects": "Lihat Proyek",
+        "downloadCV": "Download CV",
+        "openToWork": "Buka untuk Bekerja",
+        "fullstackDev": "Fullstack Dev"
+    },
+    "about": {
+        "label": "Tentang Saya",
+        "heading": "Menjembatani desain & rekayasa.",
+        "p1": "Halo! Saya Alif Bima Pradana, seorang profesional yang berdedikasi dalam menciptakan solusi digital yang berdampak. Dengan latar belakang kuat di Computer Science dan passion mendalam pada User Interface, saya membantu brand menerjemahkan visi mereka menjadi realitas digital.",
+        "p2": "Filosofi kerja saya sederhana: kualitas kode sama pentingnya dengan estetika visual. Saya memastikan setiap pixel presisi dan setiap baris kode efisien.",
+        "fastPerf": "Performa Cepat",
+        "fastPerfDesc": "Kode & aset yang dioptimalkan.",
+        "responsive": "Responsif",
+        "responsiveDesc": "Tampil baik di semua layar."
+    },
+    "skills": {
+        "label": "Tech Stack",
+        "heading": "Keahlian Teknis",
+        "desc": "Toolkit yang saya gunakan sebagai Fullstack Developer untuk menghidupkan ide-ide kreatif menjadi produk fungsional."
+    },
+    "experience": {
+        "heading": "Perjalanan Profesional",
+        "kpmi": "Membuat website Organisasi Kedaerahan digital untuk KPMI BANGKEP.",
+        "klikbanggai": "Membuat website Media berita online untuk PT Klikbanggai Mola.",
+        "freelance": "Kolaborasi dengan client untuk membuat website. dan membuat website untuk client.",
+        "present": "Sekarang"
+    },
+    "insights": {
+        "heading": "Artikel Terbaru",
+        "readBlog": "Baca Blog"
+    },
+    "contact": {
+        "heading": "Mari bekerja sama!",
+        "desc": "Punya proyek menarik? Butuh konsultasi desain? Atau sekedar ingin menyapa? Kirim pesan sekarang.",
+        "namePlaceholder": "Nama Kamu",
+        "emailPlaceholder": "Alamat Email Kamu",
+        "messagePlaceholder": "Ceritakan proyekmu...",
+        "sending": "Mengirim...",
+        "send": "Kirim Pesan",
+        "errorFill": "Mohon isi semua field yang diperlukan.",
+        "successMsg": "Pesan berhasil dikirim!",
+        "failMsg": "Gagal mengirim pesan. Silakan coba lagi."
+    },
+    "footer": {
+        "rights": "© 2026 Semua Hak Dilindungi. Dibuat dengan ❤️ dan Tailwind.",
+        "privacy": "Privasi",
+        "terms": "Ketentuan"
+    },
+    "dashboard": {
+        "badge": "Statistik GitHub",
+        "heading": "Dashboard Dev Saya",
+        "desc": "Statistik & aktivitas coding terbaru dari GitHub saya.",
+        "failedLoad": "Gagal memuat data",
+        "retry": "Coba Lagi",
+        "githubProfile": "Profil GitHub",
+        "website": "Website",
+        "joinedAt": "Bergabung",
+        "publicRepos": "Repository Publik",
+        "totalStars": "Total Bintang",
+        "followers": "Pengikut",
+        "following": "Mengikuti",
+        "topLanguages": "Bahasa Teratas",
+        "topRepos": "Repository Terbaik",
+        "streakActivity": "Streak & Aktivitas",
+        "activityGraph": "Grafik Aktivitas",
+        "profileSummary": "Ringkasan Profil",
+        "contributionHeatmap": "Heatmap Kontribusi",
+        "contributionsLastYear": "kontribusi dalam setahun terakhir",
+        "less": "Sedikit",
+        "more": "Banyak"
+    }
+}

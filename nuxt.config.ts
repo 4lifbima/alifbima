@@ -17,6 +17,26 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
 
+  modules: ['@nuxtjs/i18n'],
+
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'id',
+    lazy: true,
+    langDir: 'locales/',
+    locales: [
+      { code: 'id', name: 'Indonesia', file: 'id.json' },
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'ja', name: '日本語', file: 'ja.json' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      fallbackLocale: 'id',
+      redirectOn: 'root'
+    },
+  },
+
   // Runtime Config for environment variables
   runtimeConfig: {
     // Server-side only (not exposed to client)

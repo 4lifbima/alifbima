@@ -10,13 +10,13 @@
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
         <span class="inline-block px-4 py-1.5 bg-primary/10 dark:bg-accent-teal/10 text-primary dark:text-accent-teal text-sm font-bold rounded-full mb-4">
-          Tech Stack
+          {{ $t('skills.label') }}
         </span>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-          Technical <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500 dark:from-accent-teal dark:to-cyan-400">Proficiency</span>
+          Technical <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500 dark:from-accent-teal dark:to-cyan-400">{{ $t('skills.heading') }}</span>
         </h2>
         <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Toolkit yang saya gunakan sebagai Fullstack Developer untuk menghidupkan ide-ide kreatif menjadi produk fungsional.
+          {{ $t('skills.desc') }}
         </p>
       </div>
 

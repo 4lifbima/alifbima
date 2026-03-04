@@ -2,9 +2,8 @@
   <section class="py-24 bg-slate-50 dark:bg-[#151e32] w-full max-w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white break-words">Latest Insights</h2>
-        <NuxtLink to="/artikel" class="text-primary dark:text-accent-teal text-sm font-semibold hover:underline whitespace-nowrap">Read
-          Blog</NuxtLink>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white break-words">{{ $t('insights.heading') }}</h2>
+        <NuxtLink to="/artikel" class="text-primary dark:text-accent-teal text-sm font-semibold hover:underline whitespace-nowrap">{{ $t('insights.readBlog') }}</NuxtLink>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full">

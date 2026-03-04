@@ -1,0 +1,85 @@
+{
+    "nav": {
+        "about": "About",
+        "skills": "Skills",
+        "work": "Work",
+        "experience": "Experience",
+        "dashboard": "Dashboard"
+    },
+    "hero": {
+        "badge": "Welcome to my website",
+        "intro": "I am a",
+        "role": "Fullstack Developer",
+        "desc": "focused on building functional and efficient applications, information systems, and websites.",
+        "viewProjects": "View Projects",
+        "downloadCV": "Download CV",
+        "openToWork": "Open to Work",
+        "fullstackDev": "Fullstack Dev"
+    },
+    "about": {
+        "label": "About Me",
+        "heading": "Bridging the gap between design & engineering.",
+        "p1": "Hello! I'm Alif Bima Pradana, a dedicated professional creating impactful digital solutions. With a strong background in Computer Science and a deep passion for User Interface, I help brands translate their vision into digital reality.",
+        "p2": "My work philosophy is simple: code quality is just as important as visual aesthetics. I ensure every pixel is precise and every line of code is efficient.",
+        "fastPerf": "Fast Performance",
+        "fastPerfDesc": "Optimized code & assets.",
+        "responsive": "Responsive",
+        "responsiveDesc": "Looks good on all screens."
+    },
+    "skills": {
+        "label": "Tech Stack",
+        "heading": "Technical Proficiency",
+        "desc": "The toolkit I use as a Fullstack Developer to bring creative ideas to life as functional products."
+    },
+    "experience": {
+        "heading": "Professional Journey",
+        "kpmi": "Built a digital regional organization website for KPMI BANGKEP.",
+        "klikbanggai": "Built an online news media website for PT Klikbanggai Mola.",
+        "freelance": "Collaborated with clients to build websites and delivered custom web solutions.",
+        "present": "Present"
+    },
+    "insights": {
+        "heading": "Latest Insights",
+        "readBlog": "Read Blog"
+    },
+    "contact": {
+        "heading": "Let's work together!",
+        "desc": "Have an interesting project? Need design consultation? Or just want to say hi? Send a message now.",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email Address",
+        "messagePlaceholder": "Tell me about your project...",
+        "sending": "Sending...",
+        "send": "Send Message",
+        "errorFill": "Please fill in all required fields.",
+        "successMsg": "Message sent successfully!",
+        "failMsg": "Failed to send message. Please try again."
+    },
+    "footer": {
+        "rights": "© 2026 All Rights Reserved. Made with ❤️ and Tailwind.",
+        "privacy": "Privacy",
+        "terms": "Terms"
+    },
+    "dashboard": {
+        "badge": "GitHub Statistics",
+        "heading": "My Dev Dashboard",
+        "desc": "Latest coding stats & activity from my GitHub.",
+        "failedLoad": "Failed to load data",
+        "retry": "Try Again",
+        "githubProfile": "GitHub Profile",
+        "website": "Website",
+        "joinedAt": "Joined",
+        "publicRepos": "Public Repos",
+        "totalStars": "Total Stars",
+        "followers": "Followers",
+        "following": "Following",
+        "topLanguages": "Top Languages",
+        "topRepos": "Top Repositories",
+        "streakActivity": "Streak & Activity",
+        "activityGraph": "Activity Graph",
+        "profileSummary": "Profile Summary",
+        "contributionHeatmap": "Contribution Heatmap",
+        "contributionsLastYear": "contributions in the last year",
+        "less": "Less",
+        "more": "More"
+    }
+}
