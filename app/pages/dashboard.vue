@@ -225,30 +225,33 @@
             Profile Summary
           </h3>
 
-          <!-- Top row: 3 cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-            <div v-for="card in summaryCardsTop" :key="card.alt" class="glass-card rounded-2xl overflow-hidden group hover:scale-[1.02] transition-transform duration-200">
+          <!-- 2×2 grid: Stats · Most Commit Language / Repos per Language · Productive Time -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div
+              v-for="card in summaryCardsGrid"
+              :key="card.alt"
+              class="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200"
+            >
               <img
                 :src="card.src"
                 :alt="card.alt"
-                class="w-full h-auto object-cover"
+                class="w-full h-auto object-cover block"
                 loading="lazy"
               />
             </div>
           </div>
 
-          <!-- Bottom row: 2 cards centered -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <div v-for="card in summaryCardsBottom" :key="card.alt" class="glass-card rounded-2xl overflow-hidden group hover:scale-[1.02] transition-transform duration-200">
-              <img
-                :src="card.src"
-                :alt="card.alt"
-                class="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
+          <!-- Profile Details — full width -->
+          <div class="glass-card rounded-2xl overflow-hidden hover:scale-[1.01] transition-transform duration-200">
+            <img
+              :src="profileDetailsCard"
+              alt="Profile Details"
+              class="w-full h-auto object-cover block"
+              loading="lazy"
+            />
           </div>
         </div>
+
 
         <!-- ─── Contribution Heatmap ─── -->
         <div v-if="contributions" class="glass-card rounded-3xl p-6 sm:p-8 reveal">
@@ -354,15 +357,15 @@ const quickStats = computed(() => {
 
 // ── Summary Cards ────────────────────────────────────────
 const gh = '4lifbima'
-const summaryCardsTop = [
+// 2×2 grid: Stats, Most Commit Language, Repos per Language, Productive Time
+const summaryCardsGrid = [
   { src: `https://github-profile-summary-cards.vercel.app/api/cards/stats?username=${gh}&theme=2077`, alt: 'GitHub Stats' },
   { src: `https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${gh}&theme=2077`, alt: 'Most Commit Language' },
   { src: `https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${gh}&theme=2077`, alt: 'Repos Per Language' },
-]
-const summaryCardsBottom = [
   { src: `https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${gh}&theme=2077`, alt: 'Productive Time' },
-  { src: `https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${gh}&theme=2077`, alt: 'Profile Details' },
 ]
+// Full width card
+const profileDetailsCard = `https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${gh}&theme=2077`
 
 // ── Lang Colors ──────────────────────────────────────────
 const langColors: Record<string, string> = {
