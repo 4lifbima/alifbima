@@ -1,5 +1,3 @@
-import { Resend } from 'resend'
-
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
     const body = await readBody(event)
@@ -30,14 +28,19 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    const resend = new Resend(config.resendApiKey)
-
-    const { error } = await resend.emails.send({
-        from: 'www.alifbima.my.id <onboarding@resend.dev>',
-        to: ['alifbima.dev@gmail.com'],
-        replyTo: email,
-        subject: `Alif Bima Pradana - Pesan baru dari ${name}`,
-        html: `
+    // Direct HTTP request to Resend API (Edge & Cloudflare compatible, no SDK bundle dependencies)
+    const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${config.resendApiKey}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            from: 'www.alifbima.my.id <onboarding@resend.dev>',
+            to: ['alifbima.dev@gmail.com'],
+            reply_to: email,
+            subject: `Alif Bima Pradana - Pesan baru dari ${name}`,
+            html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #f8fafc; border-radius: 12px;">
         <h2 style="color: #6366f1; margin-bottom: 4px;">📩 Pesan Baru dari Portfolio</h2>
         <p style="color: #64748b; font-size: 14px; margin-top: 0;">Seseorang menghubungi Anda melalui form kontak.</p>
@@ -65,10 +68,12 @@ export default defineEventHandler(async (event) => {
         </p>
       </div>
     `,
+        })
     })
 
-    if (error) {
-        console.error('Resend error:', error)
+    if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Resend API error:', errorData)
         throw createError({
             statusCode: 500,
             statusMessage: 'Gagal mengirim email. Silakan coba lagi.',

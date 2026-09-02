@@ -47,8 +47,11 @@ export default defineNuxtConfig({
     }
   },
 
-  // Nitro configuration for dynamic prerender routes
+  // Nitro configuration for Cloudflare & dynamic prerender routes
   nitro: {
+    alias: {
+      '@react-email/render': 'unenv/runtime/mock/empty'
+    },
     prerender: {
       routes: dynamicUrls
     }
