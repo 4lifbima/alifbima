@@ -1,6 +1,6 @@
 <template>
   <div class="transition-colors duration-300 overflow-x-hidden max-w-full w-full">
-    <Navbar @toggle-menu="toggleMobileMenu" />
+    <Navbar :is-mobile-menu-open="isMobileMenuOpen" @toggle-menu="toggleMobileMenu" />
     <MobileMenu :is-open="isMobileMenuOpen" @close="closeMobileMenu" />
     <slot />
   </div>
