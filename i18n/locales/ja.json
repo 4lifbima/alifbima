@@ -2,15 +2,21 @@
     "nav": {
         "about": "自己紹介",
         "skills": "スキル",
-        "work": "作品",
-        "experience": "経歴",
-        "dashboard": "ダッシュボード"
+        "work": "実績",
+        "experience": "経歴"
     },
     "hero": {
         "badge": "ようこそ、私のウェブサイトへ",
         "intro": "私は",
         "role": "フルスタック開発者",
         "desc": "機能的・効率的なアプリ、情報システム、ウェブサイトの構築に注力しています。",
+        "headlinePrefix": "構築する",
+        "headlineAccent": "デジタルソリューション",
+        "headlineSuffix": "モダンで影響力のある",
+        "subtitle": "高速で安全、高パフォーマンスなWebアプリケーションや情報システム、デジタルエコシステムの開発に専念するフルスタック開発者です。",
+        "viewPortfolio": "実績を見る",
+        "contactMe": "お問い合わせ",
+        "waMessage": "こんにちは、あなたのサービスに興味があります",
         "viewProjects": "プロジェクトを見る",
         "downloadCV": "履歴書をダウンロード",
         "openToWork": "仕事募集中",
@@ -58,28 +64,5 @@
         "rights": "© 2026 全著作権所有。❤️ と Tailwind で作成。",
         "privacy": "プライバシー",
         "terms": "利用規約"
-    },
-    "dashboard": {
-        "badge": "GitHub 統計",
-        "heading": "開発者ダッシュボード",
-        "desc": "GitHubの最新コーディング統計とアクティビティ。",
-        "failedLoad": "データの読み込みに失敗しました",
-        "retry": "再試行",
-        "githubProfile": "GitHubプロフィール",
-        "website": "ウェブサイト",
-        "joinedAt": "参加日",
-        "publicRepos": "公開リポジトリ",
-        "totalStars": "合計スター",
-        "followers": "フォロワー",
-        "following": "フォロー中",
-        "topLanguages": "トップ言語",
-        "topRepos": "トップリポジトリ",
-        "streakActivity": "ストリーク＆アクティビティ",
-        "activityGraph": "アクティビティグラフ",
-        "profileSummary": "プロフィールサマリー",
-        "contributionHeatmap": "コントリビューション ヒートマップ",
-        "contributionsLastYear": "昨年のコントリビューション",
-        "less": "少ない",
-        "more": "多い"
     }
 }

@@ -14,7 +14,7 @@
       class="md:hidden fixed top-20 sm:top-28 inset-x-0 z-50 px-4 sm:px-6 max-w-lg mx-auto pointer-events-auto"
     >
       <div
-        class="w-full bg-white/50 dark:bg-slate-800/95 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xl rounded-[32px] p-5 sm:p-6 space-y-4 max-h-[85vh] overflow-y-auto"
+        class="w-full bg-white/70 dark:bg-slate-800/95 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xl rounded-[20px] p-5 sm:p-6 space-y-4 max-h-[85vh] overflow-y-auto"
       >
         <!-- Top Utility Action Bar: Search & Dark Mode Toggle -->
         <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -84,14 +84,6 @@
           >
             <span>{{ $t('nav.experience') }}</span>
           </a>
-
-          <NuxtLink
-            to="/dashboard"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>{{ $t('nav.dashboard') }}</span>
-          </NuxtLink>
         </div>
 
         <!-- Contact Primary CTA Button (Uses Primary Brand Color #26048c / Teal) -->

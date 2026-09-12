@@ -3,14 +3,20 @@
         "about": "Tentang",
         "skills": "Keahlian",
         "work": "Karya",
-        "experience": "Pengalaman",
-        "dashboard": "Dashboard"
+        "experience": "Pengalaman"
     },
     "hero": {
         "badge": "Selamat datang di website saya",
         "intro": "Saya seorang",
         "role": "Fullstack Developer",
         "desc": "yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.",
+        "headlinePrefix": "Membangun",
+        "headlineAccent": "Solusi Digital",
+        "headlineSuffix": "Modern & Berdampak",
+        "subtitle": "Fullstack Developer berdedikasi dalam merancang dan mengembangkan aplikasi web, sistem informasi, serta ekosistem digital yang cepat, aman, dan berkinerja tinggi.",
+        "viewPortfolio": "Lihat Portofolio",
+        "contactMe": "Hubungi Saya",
+        "waMessage": "Halo, saya tertarik dengan layanan Anda",
         "viewProjects": "Lihat Proyek",
         "downloadCV": "Download CV",
         "openToWork": "Buka untuk Bekerja",
@@ -58,28 +64,5 @@
         "rights": "© 2026 Semua Hak Dilindungi. Dibuat dengan ❤️ dan Tailwind.",
         "privacy": "Privasi",
         "terms": "Ketentuan"
-    },
-    "dashboard": {
-        "badge": "Statistik GitHub",
-        "heading": "Dashboard Dev Saya",
-        "desc": "Statistik & aktivitas coding terbaru dari GitHub saya.",
-        "failedLoad": "Gagal memuat data",
-        "retry": "Coba Lagi",
-        "githubProfile": "Profil GitHub",
-        "website": "Website",
-        "joinedAt": "Bergabung",
-        "publicRepos": "Repository Publik",
-        "totalStars": "Total Bintang",
-        "followers": "Pengikut",
-        "following": "Mengikuti",
-        "topLanguages": "Bahasa Teratas",
-        "topRepos": "Repository Terbaik",
-        "streakActivity": "Streak & Aktivitas",
-        "activityGraph": "Grafik Aktivitas",
-        "profileSummary": "Ringkasan Profil",
-        "contributionHeatmap": "Heatmap Kontribusi",
-        "contributionsLastYear": "kontribusi dalam setahun terakhir",
-        "less": "Sedikit",
-        "more": "Banyak"
     }
 }

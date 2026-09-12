@@ -3,14 +3,20 @@
         "about": "About",
         "skills": "Skills",
         "work": "Work",
-        "experience": "Experience",
-        "dashboard": "Dashboard"
+        "experience": "Experience"
     },
     "hero": {
         "badge": "Welcome to my website",
         "intro": "I am a",
         "role": "Fullstack Developer",
         "desc": "focused on building functional and efficient applications, information systems, and websites.",
+        "headlinePrefix": "Building",
+        "headlineAccent": "Digital Solutions",
+        "headlineSuffix": "Modern & Impactful",
+        "subtitle": "Dedicated Fullstack Developer crafting high-performance, secure, and scalable web applications, information systems, and digital ecosystems.",
+        "viewPortfolio": "View Portfolio",
+        "contactMe": "Contact Me",
+        "waMessage": "Hello, I am interested in your services",
         "viewProjects": "View Projects",
         "downloadCV": "Download CV",
         "openToWork": "Open to Work",
@@ -58,28 +64,5 @@
         "rights": "© 2026 All Rights Reserved. Made with ❤️ and Tailwind.",
         "privacy": "Privacy",
         "terms": "Terms"
-    },
-    "dashboard": {
-        "badge": "GitHub Statistics",
-        "heading": "My Dev Dashboard",
-        "desc": "Latest coding stats & activity from my GitHub.",
-        "failedLoad": "Failed to load data",
-        "retry": "Try Again",
-        "githubProfile": "GitHub Profile",
-        "website": "Website",
-        "joinedAt": "Joined",
-        "publicRepos": "Public Repos",
-        "totalStars": "Total Stars",
-        "followers": "Followers",
-        "following": "Following",
-        "topLanguages": "Top Languages",
-        "topRepos": "Top Repositories",
-        "streakActivity": "Streak & Activity",
-        "activityGraph": "Activity Graph",
-        "profileSummary": "Profile Summary",
-        "contributionHeatmap": "Contribution Heatmap",
-        "contributionsLastYear": "contributions in the last year",
-        "less": "Less",
-        "more": "More"
     }
 }

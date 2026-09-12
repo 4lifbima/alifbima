@@ -9,7 +9,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        instrument: ['"Instrument Serif"', 'serif'],
       },
       colors: {
         primary: '#26048c',
@@ -18,6 +20,8 @@ export default {
         'accent-teal': '#2dd4bf',
         'dark-bg': '#0f172a',
         'dark-card': '#1e293b',
+        'convix-orange': '#ef4d23',
+        'convix-dark': '#0b0f1a',
       },
       animation: {
         'blob': 'blob 7s infinite',

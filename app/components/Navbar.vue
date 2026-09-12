@@ -1,11 +1,11 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 z-50 pt-3 md:pt-4 px-3 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pointer-events-none transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 pt-3 md:pt-8 px-3 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pointer-events-none transition-all duration-300"
     id="navbar"
   >
     <div
-      class="pointer-events-auto w-full glass-nav rounded-full px-4 sm:px-6 py-2 md:py-2.5 transition-all duration-300 flex items-center justify-between shadow-xl border border-white/80 dark:border-slate-800/80"
-      :class="{ 'py-1.5 md:py-2 px-4 shadow-2xl bg-white/90 dark:bg-slate-900/90 border-slate-200/90 dark:border-slate-700/90': isScrolled }"
+      class="pointer-events-auto w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 md:py-2.5 transition-all duration-300 flex items-center justify-between shadow-xl border border-white/80 dark:border-slate-800/80"
+      :class="{ 'py-1.5 md:py-2 px-4 shadow-2xl bg-white/95 dark:bg-slate-900/95 border-slate-200/90 dark:border-slate-700/90': isScrolled }"
     >
       <!-- Left: Brand / Logo -->
       <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" @click="scrollToTop">
@@ -146,15 +146,6 @@
           </Transition>
         </div>
 
-        <!-- Dashboard Button Link -->
-        <NuxtLink
-          to="/dashboard"
-          class="px-4 py-1.5 rounded-full bg-primary/10 hover:bg-primary dark:bg-accent-teal/10 dark:hover:bg-accent-teal text-primary dark:text-accent-teal hover:text-white dark:hover:text-slate-900 text-sm font-semibold transition-all duration-200 flex items-center gap-2"
-          active-class="bg-primary text-white dark:bg-accent-teal dark:text-slate-900"
-        >
-          <ChartColumnBig class="w-4 h-4" />
-          <span>{{ $t('nav.dashboard') }}</span>
-        </NuxtLink>
       </div>
 
       <!-- Right: Action Controls (Mobile: Flag Language & Hamburger ONLY; Desktop: Flags, Primary Search Icon, Dark Mode) -->
@@ -294,7 +285,6 @@ import {
   Sun,
   Moon,
   Menu,
-  ChartColumnBig,
   ChevronDown,
   Search,
   X,
@@ -376,8 +366,7 @@ const searchItems = [
   { title: 'Tentang Saya', subtitle: 'Biografi, profil, dan filosofi kerja', link: '#about', icon: User },
   { title: 'Keahlian Teknis', subtitle: 'Frontend, Backend, & Tech Stack', link: '#skills', icon: Code2 },
   { title: 'Portofolio Project', subtitle: 'Daftar aplikasi dan hasil karya web', link: '#portfolio', icon: Briefcase },
-  { title: 'Pengalaman Kerja', subtitle: 'Riwayat karir & organisasi', link: '#experience', icon: Clock },
-  { title: 'Developer Dashboard', subtitle: 'Statistik GitHub & Aktivitas', link: '/dashboard', icon: ChartColumnBig }
+  { title: 'Pengalaman Kerja', subtitle: 'Riwayat karir & organisasi', link: '#experience', icon: Clock }
 ]
 
 const filteredSearchItems = computed(() => {

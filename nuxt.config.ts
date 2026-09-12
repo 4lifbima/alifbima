@@ -7,7 +7,6 @@ const dynamicUrls = [
   '/',
   '/portfolio',
   '/artikel',
-  '/dashboard',
   ...portfolios.map(p => `/portfolio/${p.slug}`),
   ...artikels.map(a => `/artikel/${a.slug}`)
 ]
@@ -40,11 +39,7 @@ export default defineNuxtConfig({
   // Runtime Config for environment variables
   runtimeConfig: {
     // Server-side only (not exposed to client)
-    resendApiKey: process.env.RESEND_API_KEY,
-    githubToken: process.env.GITHUB_TOKEN,
-    public: {
-      githubUsername: process.env.GITHUB_USERNAME || 'your-github-username'
-    }
+    resendApiKey: process.env.RESEND_API_KEY
   },
 
   // Nitro configuration for Cloudflare & dynamic prerender routes
@@ -95,7 +90,7 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', href: '/og-image.jpg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap' },
         { rel: 'canonical', href: 'https://www.alifbima.my.id' }
       ]
     }
