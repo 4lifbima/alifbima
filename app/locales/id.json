@@ -1,68 +1,98 @@
 {
-    "nav": {
-        "about": "Tentang",
-        "skills": "Keahlian",
-        "work": "Karya",
-        "experience": "Pengalaman"
-    },
-    "hero": {
-        "badge": "Selamat datang di website saya",
-        "intro": "Saya seorang",
-        "role": "Fullstack Developer",
-        "desc": "yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.",
-        "headlinePrefix": "Membangun",
-        "headlineAccent": "Solusi Digital",
-        "headlineSuffix": "Modern & Berdampak",
-        "subtitle": "Fullstack Developer berdedikasi dalam merancang dan mengembangkan aplikasi web, sistem informasi, serta ekosistem digital yang cepat, aman, dan berkinerja tinggi.",
-        "viewPortfolio": "Lihat Portofolio",
-        "contactMe": "Hubungi Saya",
-        "waMessage": "Halo, saya tertarik dengan layanan Anda",
-        "viewProjects": "Lihat Proyek",
-        "downloadCV": "Download CV",
-        "openToWork": "Buka untuk Bekerja",
-        "fullstackDev": "Fullstack Dev"
-    },
-    "about": {
-        "label": "Tentang Saya",
-        "heading": "Menjembatani desain & rekayasa.",
-        "p1": "Halo! Saya Alif Bima Pradana, seorang profesional yang berdedikasi dalam menciptakan solusi digital yang berdampak. Dengan latar belakang kuat di Computer Science dan passion mendalam pada User Interface, saya membantu brand menerjemahkan visi mereka menjadi realitas digital.",
-        "p2": "Filosofi kerja saya sederhana: kualitas kode sama pentingnya dengan estetika visual. Saya memastikan setiap pixel presisi dan setiap baris kode efisien.",
-        "fastPerf": "Performa Cepat",
-        "fastPerfDesc": "Kode & aset yang dioptimalkan.",
-        "responsive": "Responsif",
-        "responsiveDesc": "Tampil baik di semua layar."
-    },
-    "skills": {
-        "label": "Tech Stack",
-        "heading": "Keahlian Teknis",
-        "desc": "Toolkit yang saya gunakan sebagai Fullstack Developer untuk menghidupkan ide-ide kreatif menjadi produk fungsional."
-    },
-    "experience": {
-        "heading": "Perjalanan Profesional",
-        "kpmi": "Membuat website Organisasi Kedaerahan digital untuk KPMI BANGKEP.",
-        "klikbanggai": "Membuat website Media berita online untuk PT Klikbanggai Mola.",
-        "freelance": "Kolaborasi dengan client untuk membuat website. dan membuat website untuk client.",
-        "present": "Sekarang"
-    },
-    "insights": {
-        "heading": "Artikel Terbaru",
-        "readBlog": "Baca Blog"
-    },
-    "contact": {
-        "heading": "Mari bekerja sama!",
-        "desc": "Punya proyek menarik? Butuh konsultasi desain? Atau sekedar ingin menyapa? Kirim pesan sekarang.",
-        "namePlaceholder": "Nama Kamu",
-        "emailPlaceholder": "Alamat Email Kamu",
-        "messagePlaceholder": "Ceritakan proyekmu...",
-        "sending": "Mengirim...",
-        "send": "Kirim Pesan",
-        "errorFill": "Mohon isi semua field yang diperlukan.",
-        "successMsg": "Pesan berhasil dikirim!",
-        "failMsg": "Gagal mengirim pesan. Silakan coba lagi."
-    },
-    "footer": {
-        "rights": "© 2026 Semua Hak Dilindungi. Dibuat dengan ❤️ dan Tailwind.",
-        "privacy": "Privasi",
-        "terms": "Ketentuan"
-    }
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "service": "Layanan",
+    "skills": "Keahlian",
+    "resume": "Pengalaman",
+    "experience": "Pengalaman",
+    "project": "Proyek",
+    "work": "Karya",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "hello": "Halo!",
+    "im": "Saya",
+    "name": "Alif Bima,",
+    "role": "Software Engineer",
+    "quote": "Pengembangan aplikasi oleh Alif memastikan website dan sistem kami berjalan cepat dan sukses. Sangat direkomendasikan!",
+    "statNumber": "20+",
+    "statLabel": "Proyek Selesai",
+    "years": "3+ Tahun",
+    "experienceLabel": "Berpengalaman",
+    "portfolioBtn": "Portofolio",
+    "hireBtn": "Rekrut Saya",
+    "waMessage": "Halo Alif, saya tertarik bekerja sama untuk proyek website/aplikasi."
+  },
+  "services": {
+    "titlePrefix": "Layanan",
+    "titleAccent": "Saya",
+    "subtitle": "Merancang antarmuka modern, website cepat, dan aplikasi fullstack fungsional untuk membantu bisnis Anda berkembang secara digital.",
+    "card1Title": "UI/UX Design",
+    "card2Title": "Web Development",
+    "card3Title": "Landing Page"
+  },
+  "experience": {
+    "heading": "Pengalaman Kerja Saya",
+    "company1": "KPMI BANGKEP",
+    "date1": "Sep 2023 - Sekarang",
+    "role1": "Fullstack Developer",
+    "kpmi": "Merancang dan membangun website organisasi kedaerahan digital modern dengan sistem informasi terpadu untuk KPMI BANGKEP.",
+    "company2": "PT Klikbanggai Mola",
+    "date2": "Jan 2024 - Sekarang",
+    "role2": "Fullstack Developer",
+    "klikbanggai": "Mengembangkan portal media berita online berkecepatan tinggi, SEO-friendly, dan mudah dikelola untuk PT Klikbanggai Mola.",
+    "company3": "Freelance, Indonesia",
+    "date3": "Mar 2024 - Sekarang",
+    "role3": "Web Developer",
+    "freelance": "Berkolaborasi langsung dengan berbagai klien untuk membangun aplikasi web, dashboard interaktif, dan landing page profesional.",
+    "present": "Sekarang"
+  },
+  "portfolio": {
+    "headingTop": "Mari Lihat Koleksi",
+    "headingPrefix": "Karya",
+    "headingAccent": "Portofolio",
+    "seeMore": "Selengkapnya",
+    "allTitle": "Semua Portofolio",
+    "allSubtitle": "Kumpulan proyek dan studi kasus pilihan yang telah saya kerjakan.",
+    "backHome": "Kembali ke Beranda",
+    "viewDetails": "Lihat Detail"
+  },
+  "insights": {
+    "headingTop": "Dari tulisan",
+    "headingBottom": "blog saya",
+    "heading": "Dari tulisan blog saya",
+    "viewAll": "Lihat Semua",
+    "readBlog": "Baca Blog",
+    "allTitle": "Semua Artikel",
+    "allSubtitle": "Kumpulan artikel dan wawasan seputar pengembangan web, desain UI/UX, dan teknologi.",
+    "readMore": "Baca Selengkapnya"
+  },
+  "contact": {
+    "heading": "Mari Mulai Proyek Anda",
+    "desc": "Punya proyek menarik? Butuh konsultasi desain atau pengembangan web? Kirim pesan langsung ke kotak masuk saya.",
+    "namePlaceholder": "Nama Lengkap Anda",
+    "emailPlaceholder": "Alamat Email Anda",
+    "messagePlaceholder": "Ceritakan detail proyek Anda...",
+    "sending": "Mengirim...",
+    "send": "Kirim Pesan",
+    "whatsappQuick": "Chat via WhatsApp",
+    "errorFill": "Mohon isi semua kolom yang diperlukan.",
+    "successMsg": "Pesan berhasil dikirim! Saya akan segera membalas.",
+    "failMsg": "Gagal mengirim pesan. Silakan coba lagi."
+  },
+  "footer": {
+    "connectTitle": "Mari Terhubung",
+    "hireMe": "Rekrut Saya",
+    "bio": "Fullstack Developer yang berdedikasi menciptakan aplikasi web, sistem informasi, dan antarmuka digital modern yang cepat, responsif, dan berdampak.",
+    "navigation": "Navigasi",
+    "contact": "Kontak",
+    "newsletter": "Dapatkan informasi terbaru",
+    "emailPlaceholder": "Alamat email",
+    "newsletterSuccess": "Terima kasih! Email Anda telah tercatat.",
+    "rightsPrefix": "Copyright © 2026",
+    "rightsSuffix": "Hak Cipta Dilindungi.",
+    "terms": "Syarat & Ketentuan",
+    "privacy": "Kebijakan Privasi"
+  }
 }

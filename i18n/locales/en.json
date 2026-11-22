@@ -1,68 +1,98 @@
 {
-    "nav": {
-        "about": "About",
-        "skills": "Skills",
-        "work": "Work",
-        "experience": "Experience"
-    },
-    "hero": {
-        "badge": "Welcome to my website",
-        "intro": "I am a",
-        "role": "Fullstack Developer",
-        "desc": "focused on building functional and efficient applications, information systems, and websites.",
-        "headlinePrefix": "Building",
-        "headlineAccent": "Digital Solutions",
-        "headlineSuffix": "Modern & Impactful",
-        "subtitle": "Dedicated Fullstack Developer crafting high-performance, secure, and scalable web applications, information systems, and digital ecosystems.",
-        "viewPortfolio": "View Portfolio",
-        "contactMe": "Contact Me",
-        "waMessage": "Hello, I am interested in your services",
-        "viewProjects": "View Projects",
-        "downloadCV": "Download CV",
-        "openToWork": "Open to Work",
-        "fullstackDev": "Fullstack Dev"
-    },
-    "about": {
-        "label": "About Me",
-        "heading": "Bridging the gap between design & engineering.",
-        "p1": "Hello! I'm Alif Bima Pradana, a dedicated professional creating impactful digital solutions. With a strong background in Computer Science and a deep passion for User Interface, I help brands translate their vision into digital reality.",
-        "p2": "My work philosophy is simple: code quality is just as important as visual aesthetics. I ensure every pixel is precise and every line of code is efficient.",
-        "fastPerf": "Fast Performance",
-        "fastPerfDesc": "Optimized code & assets.",
-        "responsive": "Responsive",
-        "responsiveDesc": "Looks good on all screens."
-    },
-    "skills": {
-        "label": "Tech Stack",
-        "heading": "Technical Proficiency",
-        "desc": "The toolkit I use as a Fullstack Developer to bring creative ideas to life as functional products."
-    },
-    "experience": {
-        "heading": "Professional Journey",
-        "kpmi": "Built a digital regional organization website for KPMI BANGKEP.",
-        "klikbanggai": "Built an online news media website for PT Klikbanggai Mola.",
-        "freelance": "Collaborated with clients to build websites and delivered custom web solutions.",
-        "present": "Present"
-    },
-    "insights": {
-        "heading": "Latest Insights",
-        "readBlog": "Read Blog"
-    },
-    "contact": {
-        "heading": "Let's work together!",
-        "desc": "Have an interesting project? Need design consultation? Or just want to say hi? Send a message now.",
-        "namePlaceholder": "Your Name",
-        "emailPlaceholder": "Your Email Address",
-        "messagePlaceholder": "Tell me about your project...",
-        "sending": "Sending...",
-        "send": "Send Message",
-        "errorFill": "Please fill in all required fields.",
-        "successMsg": "Message sent successfully!",
-        "failMsg": "Failed to send message. Please try again."
-    },
-    "footer": {
-        "rights": "© 2026 All Rights Reserved. Made with ❤️ and Tailwind.",
-        "privacy": "Privacy",
-        "terms": "Terms"
-    }
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "skills": "Skills",
+    "resume": "Resume",
+    "experience": "Experience",
+    "project": "Project",
+    "work": "Work",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "hello": "Hello!",
+    "im": "I'm",
+    "name": "Alif Bima,",
+    "role": "Fullstack Developer",
+    "quote": "Alif's exceptional fullstack development ensured our website's success. Highly recommended!",
+    "statNumber": "20+",
+    "statLabel": "Projects Served",
+    "years": "3+ Years",
+    "experienceLabel": "Experience",
+    "portfolioBtn": "Portfolio",
+    "hireBtn": "Hire Me",
+    "waMessage": "Hello Alif, I am interested in working with you on a web/app project."
+  },
+  "services": {
+    "titlePrefix": "My",
+    "titleAccent": "Services",
+    "subtitle": "Crafting modern interfaces, high-speed websites, and scalable fullstack applications designed to elevate your digital presence.",
+    "card1Title": "UI/UX Design",
+    "card2Title": "Web Development",
+    "card3Title": "Landing Page"
+  },
+  "experience": {
+    "heading": "My Work Experience",
+    "company1": "KPMI BANGKEP",
+    "date1": "Sep 2023 - Present",
+    "role1": "Fullstack Developer",
+    "kpmi": "Designed and built a modern digital regional organization web platform with integrated information systems for KPMI BANGKEP.",
+    "company2": "PT Klikbanggai Mola",
+    "date2": "Jan 2024 - Present",
+    "role2": "Fullstack Developer",
+    "klikbanggai": "Engineered a high-performance, SEO-friendly online news media portal and editorial workflow for PT Klikbanggai Mola.",
+    "company3": "Self-Employed, Indonesia",
+    "date3": "Mar 2024 - Present",
+    "role3": "Web Developer",
+    "freelance": "Collaborated directly with clients to architect and deliver custom web applications, interactive dashboards, and landing pages.",
+    "present": "Present"
+  },
+  "portfolio": {
+    "headingTop": "Let's Have a Look at",
+    "headingPrefix": "my",
+    "headingAccent": "Portfolio",
+    "seeMore": "See More",
+    "allTitle": "All Portfolio",
+    "allSubtitle": "A curated collection of projects and case studies I have built.",
+    "backHome": "Back to Home",
+    "viewDetails": "View Details"
+  },
+  "insights": {
+    "headingTop": "From my",
+    "headingBottom": "blog post",
+    "heading": "From my blog post",
+    "viewAll": "View All",
+    "readBlog": "Read Blog",
+    "allTitle": "All Articles",
+    "allSubtitle": "Articles and insights covering web development, UI/UX design, and technology.",
+    "readMore": "Read More"
+  },
+  "contact": {
+    "heading": "Let's Start Your Project",
+    "desc": "Have an exciting project in mind? Need design or web development consultation? Send me a direct message.",
+    "namePlaceholder": "Your Full Name",
+    "emailPlaceholder": "Your Email Address",
+    "messagePlaceholder": "Tell me about your project...",
+    "sending": "Sending...",
+    "send": "Send Message",
+    "whatsappQuick": "Chat on WhatsApp",
+    "errorFill": "Please fill in all required fields.",
+    "successMsg": "Message sent successfully! I'll get back to you soon.",
+    "failMsg": "Failed to send message. Please try again."
+  },
+  "footer": {
+    "connectTitle": "Let's Connect there",
+    "hireMe": "Hire me",
+    "bio": "Dedicated Fullstack Developer building fast, responsive, and aesthetically crafted web applications, information systems, and modern digital products.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "newsletter": "Get the latest information",
+    "emailPlaceholder": "Email address",
+    "newsletterSuccess": "Thank you! Your email has been recorded.",
+    "rightsPrefix": "Copyright © 2026",
+    "rightsSuffix": "All Rights Reserved.",
+    "terms": "User Terms & Conditions",
+    "privacy": "Privacy Policy"
+  }
 }

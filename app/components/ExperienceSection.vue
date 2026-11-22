@@ -1,65 +1,130 @@
 <template>
-  <section id="experience" class="py-24 bg-slate-50 dark:bg-[#151e32] w-full max-w-full overflow-hidden">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="text-center mb-16 reveal">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 break-words">{{ $t('experience.heading') }}</h2>
+  <section id="experience" class="py-20 sm:py-28 bg-white w-full overflow-hidden">
+    <div class="max-w-[1060px] mx-auto px-5 sm:px-8">
+      <!-- Centered Heading -->
+      <h2 class="text-3xl sm:text-4xl md:text-[46px] font-semibold text-[#1D1D1D] text-center tracking-tight mb-14 sm:mb-20 reveal">
+        {{ $t('experience.heading') }}
+      </h2>
+
+      <!-- Desktop 3-Column Dashed Timeline (Matches Image 4) -->
+      <div class="hidden md:block relative">
+        <!-- Vertical Dashed Connector Line -->
+        <div
+          class="absolute left-1/2 -translate-x-1/2 top-6 bottom-12 border-l-2 border-dashed border-[#4A4A4A]"
+          aria-hidden="true"
+        />
+
+        <div class="space-y-14 lg:space-y-16">
+          <div
+            v-for="(item, idx) in experiences"
+            :key="item.id"
+            class="grid grid-cols-[1fr_auto_1fr] items-start gap-8 lg:gap-14 relative reveal"
+            :class="idx > 0 ? `delay-${idx * 100}` : ''"
+          >
+            <!-- Left: Company & Period -->
+            <div class="pt-1 pr-4">
+              <h3 class="text-xl lg:text-[26px] font-semibold text-[#1D1D1D] leading-snug">
+                {{ $t(item.companyKey) }}
+              </h3>
+              <p class="text-sm lg:text-[15px] text-[#777777] mt-1.5 font-normal">
+                {{ $t(item.dateKey) }}
+              </p>
+            </div>
+
+            <!-- Center: Dashed Ring + Alternating Solid Orange / Dark Charcoal Dot -->
+            <div class="flex items-center justify-center relative z-10">
+              <div
+                class="w-11 h-11 rounded-full border-2 border-dashed border-[#333333] bg-white flex items-center justify-center"
+              >
+                <span
+                  class="w-6 h-6 rounded-full block"
+                  :class="item.accent === 'orange' ? 'bg-[#FE4619]' : 'bg-[#2C2C2C]'"
+                />
+              </div>
+            </div>
+
+            <!-- Right: Role & Description -->
+            <div class="pt-1 pl-4">
+              <h3 class="text-xl lg:text-[26px] font-semibold text-[#1D1D1D] leading-snug">
+                {{ $t(item.roleKey) }}
+              </h3>
+              <p class="text-sm lg:text-[15px] text-[#666666] leading-relaxed mt-2 max-w-md font-normal">
+                {{ $t(item.descKey) }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="relative space-y-12">
-        <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-slate-200 dark:bg-slate-700 md:left-1/2 md:-ml-0.5">
-        </div>
+      <!-- Mobile Responsive Vertical Dashed Timeline -->
+      <div class="md:hidden relative pl-12 space-y-10">
+        <!-- Left Vertical Dashed Line -->
+        <div
+          class="absolute left-[19px] top-5 bottom-8 border-l-2 border-dashed border-[#4A4A4A]"
+          aria-hidden="true"
+        />
 
-        <!-- Item 1 -->
-        <div class="relative flex flex-col md:flex-row gap-8 items-start reveal">
-          <div class="pl-12 md:pl-0 md:w-1/2 md:text-right md:pr-4 lg:pr-12 order-2 md:order-1 pt-1 w-full">
-            <h4 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white break-words">Fullstack Developer</h4>
-            <p class="text-primary dark:text-accent-teal font-medium mb-2">KPMI BANGKEP</p>
-            <p class="text-slate-600 dark:text-slate-400 text-sm break-words">{{ $t('experience.kpmi') }}</p>
-          </div>
+        <div
+          v-for="(item, idx) in experiences"
+          :key="item.id"
+          class="relative reveal"
+          :class="idx > 0 ? `delay-${idx * 100}` : ''"
+        >
+          <!-- Ringed Node -->
           <div
-            class="absolute left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full border-4 border-white dark:border-dark-bg bg-primary shadow-md z-10 order-1 md:order-2 mt-2">
-          </div>
-          <div class="pl-12 md:w-1/2 md:pl-12 order-3 md:order-3 pt-1">
+            class="absolute -left-12 top-0 w-10 h-10 rounded-full border-2 border-dashed border-[#333333] bg-white flex items-center justify-center z-10"
+          >
             <span
-              class="inline-block px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">2023
-              - {{ $t('experience.present') }}</span>
+              class="w-5 h-5 rounded-full block"
+              :class="item.accent === 'orange' ? 'bg-[#FE4619]' : 'bg-[#2C2C2C]'"
+            />
           </div>
-        </div>
 
-        <!-- Item 2 -->
-        <div class="relative flex flex-col md:flex-row gap-8 items-start reveal delay-100">
-          <div class="pl-12 md:pl-0 md:w-1/2 md:text-right md:pr-12 order-2 md:order-1 pt-1">
-            <span
-              class="inline-block px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">2024
-              - {{ $t('experience.present') }}</span>
-          </div>
-          <div
-            class="absolute left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full border-4 border-white dark:border-dark-bg bg-primary/60 shadow-md z-10 order-1 md:order-2 mt-2">
-          </div>
-          <div class="pl-12 md:w-1/2 md:pl-4 lg:pl-12 order-3 md:order-3 pt-1 w-full">
-            <h4 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white break-words">Fullstack Developer</h4>
-            <p class="text-primary dark:text-accent-teal font-medium mb-2">PT Klikbanggai Mola</p>
-            <p class="text-slate-600 dark:text-slate-400 text-sm break-words">{{ $t('experience.klikbanggai') }}</p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="relative flex flex-col md:flex-row gap-8 items-start reveal delay-200">
-          <div class="pl-12 md:pl-0 md:w-1/2 md:text-right md:pr-4 lg:pr-12 order-2 md:order-1 pt-1 w-full">
-            <h4 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white break-words">Freelance Web Developer</h4>
-            <p class="text-primary dark:text-accent-teal font-medium mb-2">Self Employed</p>
-            <p class="text-slate-600 dark:text-slate-400 text-sm break-words">{{ $t('experience.freelance') }}</p>
-          </div>
-          <div
-            class="absolute left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full border-4 border-white dark:border-dark-bg bg-primary/40 shadow-md z-10 order-1 md:order-2 mt-2">
-          </div>
-          <div class="pl-12 md:w-1/2 md:pl-12 order-3 md:order-3 pt-1">
-            <span
-              class="inline-block px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">2024
-              - {{ $t('experience.present') }}</span>
+          <div class="space-y-1.5">
+            <p class="text-xs font-medium text-[#777777]">
+              {{ $t(item.dateKey) }}
+            </p>
+            <h3 class="text-xl font-semibold text-[#1D1D1D] leading-snug">
+              {{ $t(item.roleKey) }}
+            </h3>
+            <p class="text-sm font-semibold text-[#FE4619]">
+              {{ $t(item.companyKey) }}
+            </p>
+            <p class="text-sm text-[#666666] leading-relaxed pt-1">
+              {{ $t(item.descKey) }}
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const experiences = [
+  {
+    id: 1,
+    companyKey: 'experience.company1',
+    dateKey: 'experience.date1',
+    roleKey: 'experience.role1',
+    descKey: 'experience.kpmi',
+    accent: 'orange'
+  },
+  {
+    id: 2,
+    companyKey: 'experience.company2',
+    dateKey: 'experience.date2',
+    roleKey: 'experience.role2',
+    descKey: 'experience.klikbanggai',
+    accent: 'dark'
+  },
+  {
+    id: 3,
+    companyKey: 'experience.company3',
+    dateKey: 'experience.date3',
+    roleKey: 'experience.role3',
+    descKey: 'experience.freelance',
+    accent: 'orange'
+  }
+]
+</script>

@@ -66,7 +66,7 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'Fullstack Developer, Web Developer, Frontend, Backend, React, Vue, Laravel, Nuxt.js, Next.js, Portfolio, Alif Bima Pradana, Bima, mahasiswa informatika, UNG, Universitas Negeri Gorontalo, Gorontalo, Indonesia, ' },
         { name: 'robots', content: 'index, follow' },
         { name: 'google-site-verification', content: '7Crp0mhx89e215XuL8F-xoiMKxiHRbQd62oa4jpdR40' },
-        { name: 'theme-color', content: '#4f46e5' },
+        { name: 'theme-color', content: '#FE4619' },
 
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
@@ -90,7 +90,7 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', href: '/og-image.jpg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800&display=swap' },
         { rel: 'canonical', href: 'https://www.alifbima.my.id' }
       ]
     }

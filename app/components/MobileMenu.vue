@@ -1,119 +1,98 @@
 <template>
-  <!-- Floating Dropdown Card (Slides down smoothly from top, NO backdrop blur overlay) -->
   <Transition
-    enter-active-class="transition-all duration-300 ease-out"
-    enter-from-class="-translate-y-6 opacity-0 scale-95"
+    enter-active-class="transition-all duration-250 ease-out"
+    enter-from-class="-translate-y-4 opacity-0 scale-95"
     enter-to-class="translate-y-0 opacity-100 scale-100"
     leave-active-class="transition-all duration-200 ease-in"
     leave-from-class="translate-y-0 opacity-100 scale-100"
-    leave-to-class="-translate-y-6 opacity-0 scale-95"
+    leave-to-class="-translate-y-4 opacity-0 scale-95"
   >
     <div
       v-if="isOpen"
       id="mobile-menu"
-      class="md:hidden fixed top-20 sm:top-28 inset-x-0 z-50 px-4 sm:px-6 max-w-lg mx-auto pointer-events-auto"
+      class="lg:hidden fixed top-[74px] sm:top-[84px] inset-x-3 sm:inset-x-6 z-50 max-w-lg mx-auto"
     >
       <div
-        class="w-full bg-white/70 dark:bg-slate-800/95 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xl rounded-[20px] p-5 sm:p-6 space-y-4 max-h-[85vh] overflow-y-auto"
+        class="w-full bg-[#161616]/95 backdrop-blur-xl border border-white/10 shadow-2xl rounded-[28px] p-5 space-y-4 text-white"
       >
-        <!-- Top Utility Action Bar: Search & Dark Mode Toggle -->
-        <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
-          <!-- Search Trigger Button (Primary Theme Color) -->
-          <button
-            @click="triggerSearch"
-            class="flex-1 py-2.5 px-4 rounded-2xl bg-primary/10 hover:bg-primary dark:bg-accent-teal/10 dark:hover:bg-accent-teal text-primary dark:text-accent-teal hover:text-white dark:hover:text-slate-900 font-semibold text-sm flex items-center justify-center gap-2 border border-primary/20 dark:border-accent-teal/20 transition-all duration-200 cursor-pointer shadow-sm"
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-1">
+          <NuxtLink
+            to="/#home"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
           >
-            <Search class="w-4 h-4" />
-            <span>Cari / Search</span>
-          </button>
-
-          <!-- Dark / Light Mode Toggle Button -->
-          <button
-            @click="toggleDarkMode"
-            class="py-2.5 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer shadow-sm"
+            <span>{{ $t('nav.home') }}</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
+          <NuxtLink
+            to="/#services"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
           >
-            <ClientOnly>
-              <Sun v-if="isDarkMode" class="w-4 h-4 text-amber-400" />
-              <Moon v-else class="w-4 h-4 text-slate-600" />
-              <span>{{ isDarkMode ? 'Terang' : 'Gelap' }}</span>
-              <template #fallback>
-                <div class="w-4 h-4"></div>
-              </template>
-            </ClientOnly>
-          </button>
+            <span>{{ $t('nav.service') }}</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
+          <NuxtLink
+            to="/#experience"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
+          >
+            <span>{{ $t('nav.resume') }}</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
+          <NuxtLink
+            to="/#portfolio"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
+          >
+            <span>{{ $t('nav.project') }}</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
+          <NuxtLink
+            to="/#blog"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
+          >
+            <span>Blog</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
+          <NuxtLink
+            to="/#contact"
+            @click="closeMenu"
+            class="px-4 py-3 rounded-2xl text-[15px] font-medium text-neutral-200 hover:bg-white/10 hover:text-[#FE4619] transition-colors flex items-center justify-between"
+          >
+            <span>{{ $t('nav.contact') }}</span>
+            <ChevronRight class="w-4 h-4 text-neutral-500" />
+          </NuxtLink>
         </div>
 
-        <!-- Navigation Links List -->
-        <div class="space-y-1 py-1">
-          <a
-            href="#"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>Beranda</span>
-          </a>
-
-          <a
-            href="#about"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>{{ $t('nav.about') }}</span>
-          </a>
-
-          <a
-            href="#skills"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>{{ $t('nav.skills') }}</span>
-          </a>
-
-          <a
-            href="#portfolio"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>{{ $t('nav.work') }}</span>
-          </a>
-
-          <a
-            href="#experience"
-            @click="closeMenu"
-            class="py-2.5 px-4 rounded-2xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-primary/5 dark:hover:bg-accent-teal/10 hover:text-primary dark:hover:text-accent-teal transition-all flex items-center gap-3"
-          >
-            <span>{{ $t('nav.experience') }}</span>
-          </a>
-        </div>
-
-        <!-- Contact Primary CTA Button (Uses Primary Brand Color #26048c / Teal) -->
-        <a
-          href="#contact"
-          @click="closeMenu"
-          class="w-full py-3.5 rounded-2xl bg-primary hover:bg-primary-light dark:bg-accent-teal dark:hover:bg-teal-300 text-white dark:text-slate-900 font-bold text-base shadow-lg shadow-primary/30 dark:shadow-accent-teal/20 hover:scale-[1.01] active:scale-[0.99] transition-all text-center flex items-center justify-center gap-2 cursor-pointer mt-2"
+        <!-- Hire Me Primary Orange CTA -->
+        <button
+          type="button"
+          @click="openHireModal"
+          class="w-full py-3.5 px-5 rounded-full bg-[#FE4619] hover:bg-[#e53910] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-[#FE4619]/25 transition-all active:scale-[0.98] cursor-pointer"
         >
-          <Mail class="w-5 h-5" />
-          <span>Hubungi Kami</span>
-        </a>
+          <span>{{ $t('footer.hireMe') }}</span>
+          <ArrowUpRight class="w-4 h-4" />
+        </button>
       </div>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-import { Search, Sun, Moon, Mail } from 'lucide-vue-next'
+import { ChevronRight, ArrowUpRight } from 'lucide-vue-next'
 
 defineProps<{ isOpen: boolean }>()
 const emit = defineEmits<{ close: [] }>()
 
-const { isDarkMode, toggleDarkMode } = useDarkMode()
-
 const closeMenu = () => emit('close')
 
-const triggerSearch = () => {
+const openHireModal = () => {
   closeMenu()
   if (import.meta.client) {
-    window.dispatchEvent(new CustomEvent('open-search'))
+    window.dispatchEvent(new CustomEvent('open-hire-modal'))
   }
 }
 </script>

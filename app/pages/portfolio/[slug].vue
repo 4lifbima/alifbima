@@ -1,69 +1,76 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-dark-bg pt-24">
-    <div v-if="portfolio" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="min-h-screen bg-white text-[#1D1D1D] pt-28 sm:pt-32 flex flex-col justify-between">
+    <div v-if="portfolio" class="max-w-5xl mx-auto px-5 sm:px-8 pb-20 w-full">
 
       <!-- Header -->
       <div class="mb-8">
+        <NuxtLink
+          to="/portfolio"
+          class="inline-flex items-center gap-2 text-[#555555] hover:text-[#FE4619] mb-6 text-sm font-medium transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>{{ $t('portfolio.allTitle') }}</span>
+        </NuxtLink>
         <div class="flex flex-wrap gap-2 mb-4">
           <span v-for="cat in portfolio.category" :key="cat"
-            class="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary dark:bg-accent-teal/20 dark:text-accent-teal">
+            class="px-3.5 py-1 text-xs font-semibold rounded-full bg-[#FE4619]/10 text-[#FE4619]">
             {{ cat }}
           </span>
           <span v-for="tag in portfolio.tags" :key="tag"
-            class="px-3 py-1 text-xs font-semibold rounded-full bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+            class="px-3.5 py-1 text-xs font-medium rounded-full bg-[#F2F2F2] text-[#333333]">
             {{ tag }}
           </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 break-words">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1D1D1D] mb-4 break-words tracking-tight">
           {{ portfolio.title }}
         </h1>
-        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+        <p class="text-lg text-[#555555] mb-6 leading-relaxed">
           {{ portfolio.description }}
         </p>
-        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-          <span v-if="portfolio.client">Client: {{ portfolio.client }}</span>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-[#777777]">
+          <span v-if="portfolio.client">Client: <strong class="text-[#1D1D1D]">{{ portfolio.client }}</strong></span>
           <span>{{ new Date(portfolio.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
         </div>
       </div>
 
       <!-- Featured Image -->
-      <div class="rounded-2xl overflow-hidden mb-12 shadow-2xl">
+      <div class="rounded-[28px] overflow-hidden mb-12 shadow-[0_14px_44px_rgba(0,0,0,0.08)] border border-neutral-100">
         <img :src="portfolio.image" :alt="portfolio.title" 
           class="w-full h-auto object-cover">
       </div>
 
       <!-- Content -->
-      <div class="prose prose-slate dark:prose-invert max-w-none mb-12">
-        <div class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed" 
+      <div class="prose max-w-none mb-12">
+        <div class="text-base sm:text-lg text-[#444444] leading-relaxed" 
           v-html="formatContent(portfolio.fullDescription)">
         </div>
       </div>
 
       <!-- Challenge, Solution, Results -->
       <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div v-if="portfolio.challenge" class="bg-slate-50 dark:bg-dark-card p-6 rounded-xl">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            <AlertCircle class="w-5 h-5 text-orange-500" />
+        <div v-if="portfolio.challenge" class="bg-[#F8F8F8] border border-neutral-100 p-6 rounded-2xl">
+          <h3 class="text-lg font-bold text-[#1D1D1D] mb-3 flex items-center gap-2">
+            <AlertCircle class="w-5 h-5 text-[#FE4619]" />
             Challenge
           </h3>
-          <p class="text-slate-600 dark:text-slate-400">{{ portfolio.challenge }}</p>
+          <p class="text-[#555555] text-sm leading-relaxed">{{ portfolio.challenge }}</p>
         </div>
-        <div v-if="portfolio.solution" class="bg-slate-50 dark:bg-dark-card p-6 rounded-xl">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            <Lightbulb class="w-5 h-5 text-yellow-500" />
+        <div v-if="portfolio.solution" class="bg-[#F8F8F8] border border-neutral-100 p-6 rounded-2xl">
+          <h3 class="text-lg font-bold text-[#1D1D1D] mb-3 flex items-center gap-2">
+            <Lightbulb class="w-5 h-5 text-[#FE4619]" />
             Solution
           </h3>
-          <p class="text-slate-600 dark:text-slate-400">{{ portfolio.solution }}</p>
+          <p class="text-[#555555] text-sm leading-relaxed">{{ portfolio.solution }}</p>
         </div>
-        <div v-if="portfolio.results && portfolio.results.length > 0" class="bg-slate-50 dark:bg-dark-card p-6 rounded-xl">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            <TrendingUp class="w-5 h-5 text-green-500" />
+        <div v-if="portfolio.results && portfolio.results.length > 0" class="bg-[#F8F8F8] border border-neutral-100 p-6 rounded-2xl">
+          <h3 class="text-lg font-bold text-[#1D1D1D] mb-3 flex items-center gap-2">
+            <TrendingUp class="w-5 h-5 text-[#FE4619]" />
             Results
           </h3>
           <ul class="space-y-2">
             <li v-for="(result, idx) in portfolio.results" :key="idx" 
-              class="text-slate-600 dark:text-slate-400 text-sm flex items-start gap-2">
-              <Check class="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+              class="text-[#555555] text-sm flex items-start gap-2">
+              <Check class="w-4 h-4 text-[#FE4619] mt-0.5 shrink-0" />
               <span>{{ result }}</span>
             </li>
           </ul>
@@ -72,10 +79,10 @@
 
       <!-- Technologies -->
       <div class="mb-12">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Technologies Used</h3>
-        <div class="flex flex-wrap gap-3">
+        <h3 class="text-xl font-bold text-[#1D1D1D] mb-4">Technologies Used</h3>
+        <div class="flex flex-wrap gap-2.5">
           <span v-for="tech in portfolio.technologies" :key="tech"
-            class="px-4 py-2 bg-primary/10 text-primary dark:bg-accent-teal/20 dark:text-accent-teal rounded-lg font-medium">
+            class="px-4 py-2 bg-[#F2F2F2] text-[#1D1D1D] rounded-full text-sm font-medium">
             {{ tech }}
           </span>
         </div>
@@ -84,41 +91,41 @@
       <!-- Links -->
       <div class="flex flex-wrap gap-4 mb-16">
         <a v-if="portfolio.projectUrl" :href="portfolio.projectUrl" target="_blank"
-          class="px-6 py-3 bg-primary hover:bg-primary-light text-white rounded-lg font-semibold transition-all flex items-center gap-2">
+          class="px-7 py-3 bg-[#FE4619] hover:bg-[#e53910] text-white rounded-full font-semibold transition-all flex items-center gap-2 shadow-md shadow-[#FE4619]/25">
           View Live Project <ExternalLink class="w-4 h-4" />
         </a>
         <a v-if="portfolio.githubUrl" :href="portfolio.githubUrl" target="_blank"
-          class="px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-semibold transition-all flex items-center gap-2">
+          class="px-7 py-3 bg-[#1D1D1D] hover:bg-black text-white rounded-full font-semibold transition-all flex items-center gap-2">
           <Github class="w-4 h-4" /> View Code
         </a>
       </div>
 
       <!-- Related Projects -->
-      <div class="border-t border-slate-200 dark:border-slate-700 pt-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8">Other Projects</h2>
+      <div class="border-t border-neutral-200 pt-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#1D1D1D] mb-8">Other Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <NuxtLink v-for="item in relatedPortfolios" :key="item.id" 
             :to="`/portfolio/${item.slug}`"
-            class="group bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 block">
-            <div class="relative h-48 overflow-hidden">
+            class="group bg-white rounded-[24px] overflow-hidden border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
+            <div class="relative h-48 overflow-hidden bg-[#F5F5F5]">
               <img :src="item.image" :alt="item.title"
-                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300">
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
                 <span v-for="cat in item.category.slice(0, 1)" :key="cat"
-                  class="px-2.5 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary dark:bg-accent-teal/20 dark:text-accent-teal">
+                  class="px-3 py-1 text-xs font-medium rounded-full bg-[#F2F2F2] text-[#333333]">
                   {{ cat }}
                 </span>
               </div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary dark:group-hover:text-accent-teal transition-colors line-clamp-2">
+              <h3 class="text-lg font-bold text-[#1D1D1D] mb-2 group-hover:text-[#FE4619] transition-colors line-clamp-2">
                 {{ item.title }}
               </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-4">
+              <p class="text-sm text-[#555555] line-clamp-2 mb-4">
                 {{ item.description }}
               </p>
-              <div class="flex items-center gap-2 text-sm text-primary dark:text-accent-teal font-semibold">
-                View Project <ArrowRight class="w-4 h-4" />
+              <div class="flex items-center gap-1.5 text-sm text-[#FE4619] font-semibold">
+                {{ $t('portfolio.viewDetails') }} <ArrowRight class="w-4 h-4" />
               </div>
             </div>
           </NuxtLink>
@@ -126,18 +133,20 @@
       </div>
     </div>
 
-    <div v-else class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-      <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Portfolio Not Found</h1>
+    <div v-else class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h1 class="text-3xl font-bold text-[#1D1D1D] mb-4">Portfolio Not Found</h1>
       <NuxtLink to="/portfolio" 
-        class="inline-flex items-center gap-2 text-primary dark:text-accent-teal hover:underline">
+        class="inline-flex items-center gap-2 text-[#FE4619] hover:underline font-medium">
         Go to Portfolio
       </NuxtLink>
     </div>
+
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AlertCircle, Lightbulb, TrendingUp, Check, ExternalLink, Github, ArrowRight } from 'lucide-vue-next'
+import { ArrowLeft, AlertCircle, Lightbulb, TrendingUp, Check, ExternalLink, Github, ArrowRight } from 'lucide-vue-next'
 import { portfolios } from '~/data/Portofolio'
 
 const route = useRoute()

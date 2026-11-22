@@ -1,81 +1,90 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-dark-bg pt-24">
-    <div v-if="artikel" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="min-h-screen bg-white text-[#1D1D1D] pt-28 sm:pt-32 flex flex-col justify-between">
+    <div v-if="artikel" class="max-w-4xl mx-auto px-5 sm:px-8 pb-20 w-full">
 
       <!-- Header -->
       <div class="mb-8">
+        <NuxtLink
+          to="/artikel"
+          class="inline-flex items-center gap-2 text-[#555555] hover:text-[#FE4619] mb-6 text-sm font-medium transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>{{ $t('insights.allTitle') }}</span>
+        </NuxtLink>
         <div class="flex items-center gap-2 mb-4">
-          <span class="px-3 py-1 text-xs font-bold rounded-full bg-primary/10 text-primary dark:bg-accent-teal/20 dark:text-accent-teal uppercase">
+          <span class="px-4 py-1 text-xs font-semibold rounded-full bg-[#F2F2F2] text-[#333333] uppercase">
             {{ artikel.category }}
           </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 break-words">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1D1D1D] mb-4 break-words tracking-tight leading-tight">
           {{ artikel.title }}
         </h1>
-        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+        <p class="text-lg text-[#555555] mb-6 leading-relaxed">
           {{ artikel.excerpt }}
         </p>
-        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <div class="flex flex-wrap items-center gap-5 text-sm text-[#666666]">
           <div class="flex items-center gap-2">
-            <img v-if="artikel.authorAvatar" :src="artikel.authorAvatar" :alt="artikel.author"
-              class="w-8 h-8 rounded-full object-cover">
-            <span>{{ artikel.author }}</span>
+            <span class="w-2 h-2 rounded-full bg-[#FE4619]" />
+            <span class="font-medium text-[#1D1D1D]">{{ artikel.author }}</span>
           </div>
-          <span>{{ new Date(artikel.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#FE4619]" />
+            <span>{{ new Date(artikel.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
+          </div>
           <span>{{ artikel.readTime }}</span>
         </div>
       </div>
 
       <!-- Featured Image -->
-      <div class="rounded-2xl overflow-hidden mb-12 shadow-2xl">
+      <div class="rounded-[28px] overflow-hidden mb-12 shadow-[0_14px_44px_rgba(0,0,0,0.08)] border border-neutral-100">
         <img :src="artikel.image" :alt="artikel.title" 
           class="w-full h-auto object-cover">
       </div>
 
       <!-- Content -->
-      <article class="prose prose-slate dark:prose-invert max-w-none mb-12">
-        <div class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed" 
+      <article class="prose max-w-none mb-12">
+        <div class="text-base sm:text-lg text-[#333333] leading-relaxed" 
           v-html="formattedContent">
         </div>
       </article>
 
       <!-- Tags -->
-      <div class="mb-12 pt-8 border-t border-slate-200 dark:border-slate-700">
-        <h3 class="text-sm font-semibold text-slate-900 dark:text-white mb-4">Tags</h3>
+      <div class="mb-12 pt-8 border-t border-neutral-200">
+        <h3 class="text-sm font-semibold text-[#1D1D1D] mb-4">Tags</h3>
         <div class="flex flex-wrap gap-2">
           <span v-for="tag in artikel.tags" :key="tag"
-            class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full">
+            class="px-4 py-1.5 text-sm bg-[#F2F2F2] text-[#333333] rounded-full font-medium">
             #{{ tag }}
           </span>
         </div>
       </div>
 
       <!-- Related Articles -->
-      <div class="border-t border-slate-200 dark:border-slate-700 pt-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8">Related Articles</h2>
+      <div class="border-t border-neutral-200 pt-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#1D1D1D] mb-8">Related Articles</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <NuxtLink v-for="item in relatedArtikels" :key="item.id" 
             :to="`/artikel/${item.slug}`"
-            class="group bg-white dark:bg-dark-card rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 block">
-            <div class="relative h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden">
+            class="group bg-white rounded-[22px] overflow-hidden border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
+            <div class="relative h-44 bg-neutral-100 overflow-hidden">
               <img :src="item.image" :alt="item.title"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
             </div>
             <div class="p-5">
               <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-primary/10 text-primary dark:bg-accent-teal/20 dark:text-accent-teal uppercase">
+                <span class="px-3 py-1 text-xs font-medium rounded-full bg-[#F2F2F2] text-[#333333]">
                   {{ item.category }}
                 </span>
-                <span class="text-xs text-slate-500 dark:text-slate-400">{{ item.readTime }}</span>
+                <span class="text-xs text-[#777777]">{{ item.readTime }}</span>
               </div>
-              <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary dark:group-hover:text-accent-teal transition-colors line-clamp-2">
+              <h3 class="text-base md:text-lg font-bold text-[#1D1D1D] mb-2 group-hover:text-[#FE4619] transition-colors line-clamp-2">
                 {{ item.title }}
               </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-4">
+              <p class="text-sm text-[#555555] line-clamp-2 mb-4">
                 {{ item.excerpt }}
               </p>
-              <div class="flex items-center gap-2 text-sm text-primary dark:text-accent-teal font-semibold">
-                Read More <ArrowRight class="w-4 h-4" />
+              <div class="flex items-center gap-1.5 text-sm text-[#FE4619] font-semibold">
+                {{ $t('insights.readMore') }} <ArrowRight class="w-4 h-4" />
               </div>
             </div>
           </NuxtLink>
@@ -83,18 +92,20 @@
       </div>
     </div>
 
-    <div v-else class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-      <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Article Not Found</h1>
+    <div v-else class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h1 class="text-3xl font-bold text-[#1D1D1D] mb-4">Article Not Found</h1>
       <NuxtLink to="/artikel" 
-        class="inline-flex items-center gap-2 text-primary dark:text-accent-teal hover:underline">
+        class="inline-flex items-center gap-2 text-[#FE4619] hover:underline font-medium">
         Go to Articles
       </NuxtLink>
     </div>
+
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ArrowRight } from 'lucide-vue-next'
+import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 import { artikels } from '~/data/Artikel'
 
 const route = useRoute()

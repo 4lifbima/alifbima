@@ -1,33 +1,31 @@
 <template>
-  <div>
+  <div class="bg-white text-[#1D1D1D]">
     <HeroSection />
-    <AboutSection />
-    <SkillsSection />
-    <PortfolioSection />
+    <ServicesSection />
     <ExperienceSection />
+    <PortfolioSection />
     <InsightsSection />
-    <ContactSection />
     <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Alif Bima Pradana',
+  title: 'Alif Bima Pradana — Fullstack Developer',
   description: 'Alif Bima Pradana - Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
-  
+
   // Open Graph
   ogType: 'website',
-  ogTitle: 'Alif Bima Pradana',
+  ogTitle: 'Alif Bima Pradana — Fullstack Developer',
   ogDescription: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
   ogImage: '/og-image.jpg',
   ogUrl: 'https://www.alifbima.my.id',
   ogLocale: 'id_ID',
   ogSiteName: 'Alif Bima Pradana',
-  
+
   // Twitter
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Alif Bima Pradana',
+  twitterTitle: 'Alif Bima Pradana — Fullstack Developer',
   twitterDescription: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
   twitterImage: '/og-image.jpg',
   twitterCreator: '@alifbima_'

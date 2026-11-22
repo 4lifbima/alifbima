@@ -3,37 +3,32 @@ export default {
   content: [
     "./app/**/*.{js,vue,ts}",
     "./assets/css/main.css",
+    "./app/assets/css/main.css",
     "./app.vue",
   ],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        sans: ['Urbanist', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        urbanist: ['Urbanist', 'sans-serif'],
+        brand: ['"Playfair Display"', 'Georgia', 'serif'],
         inter: ['Inter', 'sans-serif'],
         instrument: ['"Instrument Serif"', 'serif'],
       },
       colors: {
-        primary: '#26048c',
-        'primary-light': '#451ac4',
-        'primary-dark': '#1a0261',
-        'accent-teal': '#2dd4bf',
-        'dark-bg': '#0f172a',
-        'dark-card': '#1e293b',
-        'convix-orange': '#ef4d23',
-        'convix-dark': '#0b0f1a',
+        primary: '#FE4619',
+        'primary-light': '#FF6B47',
+        'primary-dark': '#E0380E',
+        'accent-teal': '#FE4619',
+        'dark-bg': '#141414',
+        'dark-surface': '#1D1D1D',
+        'dark-card': '#282828',
       },
       animation: {
-        'blob': 'blob 7s infinite',
-        'fade-up': 'fadeUp 0.8s ease-out forwards',
+        'fade-up': 'fadeUp 0.7s ease-out forwards',
       },
       keyframes: {
-        blob: {
-          '0%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-          '100%': { transform: 'translate(0px, 0px) scale(1)' },
-        },
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },

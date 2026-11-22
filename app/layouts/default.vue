@@ -1,5 +1,5 @@
 <template>
-  <div class="transition-colors duration-300 overflow-x-hidden max-w-full w-full">
+  <div class="bg-white text-[#1D1D1D] overflow-x-hidden max-w-full w-full min-h-screen">
     <Navbar :is-mobile-menu-open="isMobileMenuOpen" @toggle-menu="toggleMobileMenu" />
     <MobileMenu :is-open="isMobileMenuOpen" @close="closeMobileMenu" />
     <slot />
@@ -10,10 +10,8 @@
 import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 
 const isMobileMenuOpen = ref(false)
-const { initDarkMode } = useDarkMode()
 const route = useRoute()
 
-// Scroll animation observer
 let revealObserver: IntersectionObserver | null = null
 
 const toggleMobileMenu = () => {
@@ -26,18 +24,15 @@ const closeMobileMenu = () => {
 
 const setupScrollAnimations = () => {
   if (!import.meta.client) return
-  
-  // Clean up existing observer
+
   if (revealObserver) {
     revealObserver.disconnect()
     revealObserver = null
   }
-  
-  // Wait a bit to ensure DOM is ready
+
   setTimeout(() => {
     if (!import.meta.client) return
-    
-    // Set up scroll animations
+
     const revealElements = document.querySelectorAll('.reveal')
     if (revealElements.length > 0) {
       revealObserver = new IntersectionObserver((entries) => {
@@ -47,8 +42,8 @@ const setupScrollAnimations = () => {
           }
         })
       }, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
       })
 
       revealElements.forEach(el => {
@@ -61,24 +56,21 @@ const setupScrollAnimations = () => {
 }
 
 onMounted(() => {
-  // Initialize dark mode
-  initDarkMode()
-  
-  // Setup animations after a short delay to ensure DOM is ready
+  if (import.meta.client) {
+    document.documentElement.classList.remove('dark')
+  }
   nextTick(() => {
     setupScrollAnimations()
   })
 })
 
-// Reinitialize on route change
 watch(() => route.path, () => {
-  // Clean up first
+  isMobileMenuOpen.value = false
   if (revealObserver) {
     revealObserver.disconnect()
     revealObserver = null
   }
-  
-  // Wait for route transition to complete
+
   nextTick(() => {
     setTimeout(() => {
       setupScrollAnimations()
@@ -87,12 +79,9 @@ watch(() => route.path, () => {
 }, { flush: 'post' })
 
 onUnmounted(() => {
-  // Clean up observer
   if (revealObserver) {
     revealObserver.disconnect()
   }
-  
-  // Clean up body overflow style
   if (import.meta.client) {
     document.body.style.overflow = ''
   }
