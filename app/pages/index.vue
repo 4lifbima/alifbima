@@ -11,12 +11,12 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Alif Bima Pradana — Fullstack Developer',
+  title: 'Alif Bima Pradana',
   description: 'Alif Bima Pradana - Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
 
   // Open Graph
   ogType: 'website',
-  ogTitle: 'Alif Bima Pradana — Fullstack Developer',
+  ogTitle: 'Alif Bima Pradana',
   ogDescription: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
   ogImage: '/og-image.jpg',
   ogUrl: 'https://www.alifbima.my.id',
@@ -25,7 +25,7 @@ useSeoMeta({
 
   // Twitter
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Alif Bima Pradana — Fullstack Developer',
+  twitterTitle: 'Alif Bima Pradana',
   twitterDescription: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.',
   twitterImage: '/og-image.jpg',
   twitterCreator: '@alifbima_'
