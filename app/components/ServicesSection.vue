@@ -21,19 +21,21 @@
       </div>
 
       <!-- 3 Service Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8 mt-12">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8 mt-12 reveal"
+        @mouseleave="activeIndex = 1"
+      >
         <div
           v-for="(service, idx) in services"
           :key="service.key"
           @mouseenter="activeIndex = idx"
           @click="activeIndex = idx"
-          class="group relative rounded-[28px] overflow-hidden flex flex-col justify-between transition-all duration-300 border cursor-pointer reveal"
-          :class="[
+          class="group relative rounded-[28px] overflow-hidden flex flex-col justify-between transition-all duration-300 border cursor-pointer"
+          :class="
             idx === activeIndex
               ? 'bg-[#FE4619] border-[#FE4619] shadow-2xl shadow-[#FE4619]/20'
-              : 'bg-[#282828] border-white/10 hover:border-white/20',
-            idx > 0 ? `delay-${idx * 100}` : ''
-          ]"
+              : 'bg-[#282828] border-white/10 hover:border-white/20'
+          "
         >
           <!-- Card Title Header -->
           <div

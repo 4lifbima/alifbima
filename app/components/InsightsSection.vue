@@ -18,13 +18,12 @@
       </div>
 
       <!-- 3-Column Blog Post Cards (Matches Image 1 Top) -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-7 lg:gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-7 lg:gap-8 reveal">
         <NuxtLink
           v-for="(artikel, idx) in featuredArtikels"
           :key="artikel.id"
           :to="`/artikel/${artikel.slug}`"
-          class="group block reveal"
-          :class="idx > 0 ? `delay-${idx * 100}` : ''"
+          class="group block"
         >
           <!-- Image Box with Concave Bottom-Right Cutout & Circular Arrow Button -->
           <div class="relative aspect-[4/3.6] rounded-[26px] overflow-hidden bg-neutral-100">

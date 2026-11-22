@@ -14,12 +14,11 @@
           aria-hidden="true"
         />
 
-        <div class="space-y-14 lg:space-y-16">
+        <div class="space-y-14 lg:space-y-16 reveal">
           <div
-            v-for="(item, idx) in experiences"
+            v-for="item in experiences"
             :key="item.id"
-            class="grid grid-cols-[1fr_auto_1fr] items-start gap-8 lg:gap-14 relative reveal"
-            :class="idx > 0 ? `delay-${idx * 100}` : ''"
+            class="grid grid-cols-[1fr_auto_1fr] items-start gap-8 lg:gap-14 relative"
           >
             <!-- Left: Company & Period -->
             <div class="pt-1 pr-4">
@@ -57,7 +56,7 @@
       </div>
 
       <!-- Mobile Responsive Vertical Dashed Timeline -->
-      <div class="md:hidden relative pl-12 space-y-10">
+      <div class="md:hidden relative pl-12 space-y-10 reveal">
         <!-- Left Vertical Dashed Line -->
         <div
           class="absolute left-[19px] top-5 bottom-8 border-l-2 border-dashed border-[#4A4A4A]"
@@ -65,10 +64,9 @@
         />
 
         <div
-          v-for="(item, idx) in experiences"
+          v-for="item in experiences"
           :key="item.id"
-          class="relative reveal"
-          :class="idx > 0 ? `delay-${idx * 100}` : ''"
+          class="relative"
         >
           <!-- Ringed Node -->
           <div
