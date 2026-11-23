@@ -115,9 +115,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-vue-next'
-import { portfolios } from '~/data/Portofolio'
+import { getFeaturedPortfolios } from '~/data/Portofolio'
 
-const allPortfolios = portfolios
+const allPortfolios = getFeaturedPortfolios()
 const currentIndex = ref(0)
 
 const activeItem = computed(() => allPortfolios[currentIndex.value])

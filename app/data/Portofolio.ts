@@ -214,6 +214,30 @@ export const portfolios: Portfolio[] = [
       'Dapat menampilkan data sekolah indonesia dengan mudah.',
     ]
   },
+  {
+    id: '10',
+    slug: 'website-jurusan-teknik-informatika-ung',
+    title: 'Website Jurusan Teknik Informatika UNG',
+    description: 'Portal web resmi Jurusan Teknik Informatika Fakultas Teknik Universitas Negeri Gorontalo dengan layanan akademik terpadu, multi-bahasa, dan aksesibilitas modern.',
+    fullDescription: `Website Jurusan Teknik Informatika Universitas Negeri Gorontalo (UNG) adalah portal informasi resmi Fakultas Teknik yang dirancang dari awal untuk menjadi pusat layanan digital bagi mahasiswa, dosen, peneliti, dan calon mahasiswa.
+
+Website ini menghadirkan navigasi terstruktur meliputi Profil Jurusan, Akademik, Riset & Publikasi, Berita, Jurnal, serta Laboratorium. Dilengkapi fitur Layanan Cepat untuk akses langsung ke Program Studi, Data Dosen, Laboratorium, Penelitian, Dokumen Resmi, dan Berita Terbaru, serta dukungan multi-bahasa (Indonesia & Inggris), fitur pencarian cepat, dan widget aksesibilitas ramah pengguna.`,
+    image: '/portofolio/informatika-ung.png',
+    category: ['Academic Portal', 'Web App'],
+    tags: ['Academic Portal', 'Web Design', 'Multi-Language', 'Responsive'],
+    featured: true,
+    date: '2026-08-18',
+    client: 'Jurusan Teknik Informatika UNG',
+    technologies: ['TypeScript', 'Tailwind CSS', 'Responsive UI', 'Multi-Language', 'SEO'],
+    projectUrl: 'https://informatika.ft.ung.ac.id/',
+    challenge: 'Menyajikan informasi akademik, data dosen, riset, jurnal, dan dokumen resmi dalam satu portal universitas yang cepat, mudah diakses, dan mendukung multi-bahasa.',
+    solution: 'Membangun arsitektur informasi yang bersih dengan menu Layanan Cepat, tampilan responsif desktop & mobile, dukungan dwi-bahasa (ID/EN), serta fitur aksesibilitas terintegrasi.',
+    results: [
+      'Mempermudah akses mahasiswa dan dosen ke layanan akademik, laboratorium, dan dokumen resmi',
+      'Tampilan responsif optimal pada perangkat desktop maupun mobile',
+      'Mendukung standar aksesibilitas web serta tampilan multi-bahasa Indonesia & Inggris'
+    ]
+  },
 
 ]
 
