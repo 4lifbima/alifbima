@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   // Runtime Config for environment variables
   runtimeConfig: {
     // Server-side only (not exposed to client)
-    resendApiKey: process.env.RESEND_API_KEY
+    resendApiKey: process.env.NUXT_RESEND_API_KEY || process.env.RESEND_API_KEY || ''
   },
 
   // Nitro configuration for Cloudflare & dynamic prerender routes
