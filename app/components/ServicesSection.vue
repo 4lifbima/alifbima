@@ -60,11 +60,11 @@
               :class="idx === activeIndex ? 'bg-white/40' : 'bg-white/20'"
             />
             <!-- Front Preview Image Card -->
-            <div class="relative w-full aspect-[4/3.1] -mt-1.5 rounded-[24px] overflow-hidden bg-white shadow-xl">
+            <div class="relative w-full aspect-[4/3] -mt-1.5 rounded-[24px] overflow-hidden bg-black ring-1 ring-inset ring-white/10 shadow-xl">
               <img
                 :src="service.image"
                 :alt="$t(service.titleKey)"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -97,19 +97,19 @@ const services = [
   {
     key: 'uiux',
     titleKey: 'services.card1Title',
-    image: '/portofolio/money.png',
+    image: '/assets/service-image/uiuxdesign.jpg',
     link: '/portfolio/aplikasi-money-tracker'
   },
   {
     key: 'webdev',
     titleKey: 'services.card2Title',
-    image: '/portofolio/desa.png',
+    image: '/assets/service-image/webdevelopment.jpg',
     link: '/portfolio/website-desa-digital'
   },
   {
     key: 'landing',
     titleKey: 'services.card3Title',
-    image: '/portofolio/ai.png',
+    image: '/assets/service-image/landingpage.jpg',
     link: '/portfolio/buildify-ai-web-generator'
   }
 ]
