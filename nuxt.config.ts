@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
 
   i18n: {
+    restructureDir: 'app',
     strategy: 'no_prefix',
     defaultLocale: 'id',
     lazy: true,
@@ -61,9 +62,9 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Alif Bima Pradana - Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
+        { name: 'description', content: 'Alif Bima Pradana - Software Engineer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
         { name: 'author', content: 'Alif Bima Pradana' },
-        { name: 'keywords', content: 'Fullstack Developer, Web Developer, Frontend, Backend, React, Vue, Laravel, Nuxt.js, Next.js, Portfolio, Alif Bima Pradana, Bima, mahasiswa informatika, UNG, Universitas Negeri Gorontalo, Gorontalo, Indonesia, ' },
+        { name: 'keywords', content: 'Software Engineer, Web Developer, Mobile Developer, Frontend, Backend, React, Vue, Laravel, Nuxt.js, Next.js, Portfolio, Alif Bima Pradana, Bima, mahasiswa informatika, UNG, Universitas Negeri Gorontalo, Gorontalo, Indonesia, ' },
         { name: 'robots', content: 'index, follow' },
         { name: 'google-site-verification', content: '7Crp0mhx89e215XuL8F-xoiMKxiHRbQd62oa4jpdR40' },
         { name: 'theme-color', content: '#FE4619' },
@@ -72,7 +73,7 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Alif Bima Pradana' },
         { property: 'og:title', content: 'Alif Bima Pradana' },
-        { property: 'og:description', content: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
+        { property: 'og:description', content: 'Software Engineer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
         { property: 'og:image', content: 'https://www.alifbima.my.id/og-image.jpg' },
         { property: 'og:image:width', content: '1024' },
         { property: 'og:image:height', content: '1024' },
@@ -81,7 +82,7 @@ export default defineNuxtConfig({
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Alif Bima Pradana' },
-        { name: 'twitter:description', content: 'Fullstack Developer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
+        { name: 'twitter:description', content: 'Software Engineer yang berfokus membangun aplikasi, sistem informasi, dan website yang fungsional dan efisien.' },
         { name: 'twitter:image', content: 'https://www.alifbima.my.id/og-image.jpg' },
         { name: 'twitter:creator', content: '@alifbima_' }
       ],

@@ -14,7 +14,7 @@
     "hello": "Halo!",
     "im": "Saya",
     "name": "Alif Bima,",
-    "role": "Fullstack Developer",
+    "role": "Software Engineer",
     "quote": "Pengembangan aplikasi oleh Alif memastikan website dan sistem kami berjalan cepat dan sukses. Sangat direkomendasikan!",
     "statNumber": "20+",
     "statLabel": "Proyek Selesai",
@@ -46,7 +46,11 @@
     "date3": "Mar 2024 - Sekarang",
     "role3": "Web Developer",
     "freelance": "Berkolaborasi langsung dengan berbagai klien untuk membangun aplikasi web, dashboard interaktif, dan landing page profesional.",
-    "present": "Sekarang"
+    "present": "Sekarang",
+    "company4": "Jurusan Teknik Informatika UNG",
+    "date4": "18 Agustus 2026 - 8 Desember 2026",
+    "role4": "Software Engineer",
+    "informatika": "Mengembangkan website untuk Jurusan Teknik Informatika Universitas Negeri Gorontalo (UNG)."
   },
   "portfolio": {
     "headingTop": "Mari Lihat Koleksi",

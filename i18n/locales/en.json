@@ -14,7 +14,7 @@
     "hello": "Hello!",
     "im": "I'm",
     "name": "Alif Bima,",
-    "role": "Fullstack Developer",
+    "role": "Software Engineer",
     "quote": "Alif's exceptional fullstack development ensured our website's success. Highly recommended!",
     "statNumber": "20+",
     "statLabel": "Projects Served",
@@ -46,7 +46,11 @@
     "date3": "Mar 2024 - Present",
     "role3": "Web Developer",
     "freelance": "Collaborated directly with clients to architect and deliver custom web applications, interactive dashboards, and landing pages.",
-    "present": "Present"
+    "present": "Present",
+    "company4": "Informatics Engineering Department UNG",
+    "date4": "August 18, 2026 - December 8, 2026",
+    "role4": "Software Engineer",
+    "informatika": "Developed the official website for the Informatics Engineering Department at Universitas Negeri Gorontalo (UNG)."
   },
   "portfolio": {
     "headingTop": "Let's Have a Look at",

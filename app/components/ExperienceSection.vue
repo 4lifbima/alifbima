@@ -123,6 +123,14 @@ const experiences = [
     roleKey: 'experience.role3',
     descKey: 'experience.freelance',
     accent: 'orange'
+  },
+  {
+    id: 4,
+    companyKey: 'experience.company4',
+    dateKey: 'experience.date4',
+    roleKey: 'experience.role4',
+    descKey: 'experience.informatika',
+    accent: 'dark'
   }
 ]
 </script>
